@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="MySQL,DbUtils," />
+  <meta name="keywords" content="JavaBean,JSP,java," />
 
 
 
@@ -92,16 +92,19 @@
 
 
 
-<meta name="description" content="首先直接把jar包放在/WebContent/WEB-INF/lib目录下。通过buildpath添加可能会有异常。">
+<meta name="description" content="使用JavaBean规范，编写Guestbook类和MySQLUtil类，在MessageArchiever.jsp中使用getter和setter进行值传递。
+Guestbook.java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用Commons DbUtils进行JDBC数据库连接">
-<meta property="og:url" content="https://akillcool.github.io/2017/10/11/Using_commons_dbutils/index.html">
+<meta property="og:title" content="JavaBean和JSP">
+<meta property="og:url" content="https://akillcool.github.io/2017/10/13/JavaBean-and-JSP/index.html">
 <meta property="og:site_name" content="Koi">
-<meta property="og:description" content="首先直接把jar包放在/WebContent/WEB-INF/lib目录下。通过buildpath添加可能会有异常。">
-<meta property="og:updated_time" content="2017-10-11T08:29:28.126Z">
+<meta property="og:description" content="使用JavaBean规范，编写Guestbook类和MySQLUtil类，在MessageArchiever.jsp中使用getter和setter进行值传递。
+Guestbook.java">
+<meta property="og:updated_time" content="2017-10-13T14:42:11.246Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用Commons DbUtils进行JDBC数据库连接">
-<meta name="twitter:description" content="首先直接把jar包放在/WebContent/WEB-INF/lib目录下。通过buildpath添加可能会有异常。">
+<meta name="twitter:title" content="JavaBean和JSP">
+<meta name="twitter:description" content="使用JavaBean规范，编写Guestbook类和MySQLUtil类，在MessageArchiever.jsp中使用getter和setter进行值传递。
+Guestbook.java">
 
 
 
@@ -129,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://akillcool.github.io/2017/10/11/Using_commons_dbutils/"/>
+  <link rel="canonical" href="https://akillcool.github.io/2017/10/13/JavaBean-and-JSP/"/>
 
 
 
 
 
-  <title> 使用Commons DbUtils进行JDBC数据库连接 | Koi </title>
+  <title> JavaBean和JSP | Koi </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -269,7 +272,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://akillcool.github.io/2017/10/11/Using_commons_dbutils/">
+  <link itemprop="mainEntityOfPage" href="https://akillcool.github.io/2017/10/13/JavaBean-and-JSP/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Koi">
@@ -293,7 +296,7 @@
             
             
               
-                使用Commons DbUtils进行JDBC数据库连接
+                JavaBean和JSP
               
             
           </h1>
@@ -306,8 +309,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-11T16:15:47+08:00">
-                2017-10-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-13T21:55:27+08:00">
+                2017-10-13
               </time>
             
 
@@ -340,8 +343,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2017/10/11/Using_commons_dbutils/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/10/11/Using_commons_dbutils/" itemprop="commentCount"></span>
+                <a href="/2017/10/13/JavaBean-and-JSP/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/10/13/JavaBean-and-JSP/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -351,7 +354,7 @@
 
           
           
-             <span id="/2017/10/11/Using_commons_dbutils/" class="leancloud_visitors" data-flag-title="使用Commons DbUtils进行JDBC数据库连接">
+             <span id="/2017/10/13/JavaBean-and-JSP/" class="leancloud_visitors" data-flag-title="JavaBean和JSP">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -376,9 +379,11 @@
       
 
       
-        <p>首先直接把jar包放在/WebContent/WEB-INF/lib目录下。<br>通过buildpath添加可能会有异常。<br><a id="more"></a></p>
-<h2 id="MessageArchiever-java"><a href="#MessageArchiever-java" class="headerlink" title="MessageArchiever.java"></a>MessageArchiever.java</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> java.sql.Connection;</div><div class="line"><span class="keyword">import</span> java.sql.PreparedStatement;</div><div class="line"><span class="keyword">import</span> java.sql.SQLException;</div><div class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.naming.InitialContext;</div><div class="line"><span class="keyword">import</span> javax.naming.NamingException;</div><div class="line"><span class="keyword">import</span> javax.sql.DataSource;</div><div class="line"></div><div class="line"><span class="comment">//使用QueryRunner类进行数据库操作</span></div><div class="line"><span class="keyword">import</span> org.apache.commons.dbutils.QueryRunner;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.naming.Context;</div><div class="line"><span class="keyword">import</span> javax.servlet.ServletException;</div><div class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Servlet implementation class MessageArchiever</div><div class="line"> */</div><div class="line"><span class="meta">@WebServlet</span>(description = <span class="string">"Stores all valid users' message."</span>, urlPatterns = &#123; <span class="string">"/MessageArchiever"</span> &#125;)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MessageArchiever</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * <span class="doctag">@see</span> HttpServlet#HttpServlet()</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MessageArchiever</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">super</span>();</div><div class="line">		<span class="comment">// TODO Auto-generated constructor stub</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * <span class="doctag">@see</span> HttpServlet#doGet(HttpServletRequest request, HttpServletResponse</div><div class="line">	 *      response)</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></div><div class="line">			<span class="keyword">throws</span> ServletException, IOException &#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		response.getWriter().append(<span class="string">"Served at: "</span>).append(request.getContextPath());</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * <span class="doctag">@see</span> HttpServlet#doPost(HttpServletRequest request, HttpServletResponse</div><div class="line">	 *      response)</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></div><div class="line">			<span class="keyword">throws</span> ServletException, IOException &#123;</div><div class="line"></div><div class="line">		<span class="keyword">int</span> result = <span class="number">0</span>;</div><div class="line"></div><div class="line">		<span class="comment">// 设置编码</span></div><div class="line">		request.setCharacterEncoding(<span class="string">"utf-8"</span>);</div><div class="line">		<span class="comment">// 要执行的SQL语句</span></div><div class="line">		String sql = <span class="string">"insert into book(name,email,phone,title,content,publishtime) values(?,?,?,?,?,?)"</span>;</div><div class="line"></div><div class="line">		String name = request.getParameter(<span class="string">"name"</span>);</div><div class="line">		String email = request.getParameter(<span class="string">"email"</span>);</div><div class="line">		String phone = request.getParameter(<span class="string">"phone"</span>);</div><div class="line">		String topic = request.getParameter(<span class="string">"topic"</span>);</div><div class="line">		String content = request.getParameter(<span class="string">"content"</span>);</div><div class="line">		SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd hh:mm:ss"</span>);</div><div class="line"></div><div class="line">		String param[] = &#123; name, email, phone, topic, content, sdf.format(<span class="keyword">new</span> java.util.Date()) &#125;;</div><div class="line"></div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			<span class="comment">// 初始化上下文环境，可以从这个环境中取出数据源对象</span></div><div class="line">			Context context = <span class="keyword">new</span> InitialContext();</div><div class="line"></div><div class="line">			<span class="comment">// 从上下文环境中取出数据源对象，其中jdbc/mysql就是我们在DBCP中配置的数据库源，这个数据库受DBCP的管理</span></div><div class="line">			DataSource dSource = (DataSource) context.lookup(<span class="string">"java:/comp/env/jdbc/mysql"</span>);</div><div class="line"></div><div class="line">			QueryRunner qRunner = <span class="keyword">new</span> QueryRunner(dSource);</div><div class="line">			result = qRunner.update(sql, param);</div><div class="line">			response.getWriter().append(Integer.toString(result));</div><div class="line">		&#125; <span class="keyword">catch</span> (NamingException | SQLException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		doGet(request, response);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
+        <p>使用JavaBean规范，编写Guestbook类和MySQLUtil类，在MessageArchiever.jsp中使用getter和setter进行值传递。</p>
+<h2 id="Guestbook-java"><a href="#Guestbook-java" class="headerlink" title="Guestbook.java"></a>Guestbook.java</h2><a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> koi;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Guestbook</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> String name;</div><div class="line">	<span class="keyword">private</span> String email;</div><div class="line">	<span class="keyword">private</span> String phone;</div><div class="line">	<span class="keyword">private</span> String topic;</div><div class="line">	<span class="keyword">private</span> String content;</div><div class="line">	<span class="keyword">private</span> Integer id;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> name;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.name = name;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getEmail</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> email;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEmail</span><span class="params">(String email)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.email = email;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getPhone</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> phone;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPhone</span><span class="params">(String phone)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.phone = phone;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getTopic</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> topic;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTopic</span><span class="params">(String topic)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.topic = topic;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> content;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setContent</span><span class="params">(String content)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.content = content;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> id;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.id = id;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="MySQLUtil-java"><a href="#MySQLUtil-java" class="headerlink" title="MySQLUtil.java"></a>MySQLUtil.java</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> koi;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.sql.SQLException;</div><div class="line"><span class="keyword">import</span> javax.sql.DataSource;</div><div class="line"><span class="keyword">import</span> javax.naming.Context;</div><div class="line"><span class="keyword">import</span> javax.naming.InitialContext;</div><div class="line"><span class="keyword">import</span> javax.naming.NamingException;</div><div class="line"><span class="keyword">import</span> org.apache.commons.dbutils.QueryRunner;</div><div class="line"><span class="keyword">import</span> org.apache.commons.dbutils.ResultSetHandler;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySQLUtil</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> String dataSourceName;</div><div class="line">	<span class="keyword">private</span> DataSource dSource;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MySQLUtil</span><span class="params">(String dataSourceName)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.dataSourceName = dataSourceName;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MySQLUtil</span><span class="params">()</span> </span>&#123;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDataSourceName</span><span class="params">(String dataSourceName)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.dataSourceName = dataSourceName;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</div><div class="line">		Context initContext;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			initContext = <span class="keyword">new</span> InitialContext();</div><div class="line">			dSource = (DataSource)initContext.lookup(dataSourceName);</div><div class="line">		&#125; <span class="keyword">catch</span> (NamingException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">update</span><span class="params">(String sql, Object[] param)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> result = <span class="number">0</span>;</div><div class="line">		QueryRunner qRunner = <span class="keyword">new</span> QueryRunner(dSource);</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			result = qRunner.update(sql, param);</div><div class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">query</span><span class="params">(String sql, Object[] param, ResultSetHandler rSetHandler)</span> </span>&#123;</div><div class="line">		QueryRunner qRunner = <span class="keyword">new</span> QueryRunner(dSource);</div><div class="line">		Object result = <span class="keyword">null</span>;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			result = qRunner.query(sql, param, rSetHandler);</div><div class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="MessageArchiever-jsp"><a href="#MessageArchiever-jsp" class="headerlink" title="MessageArchiever.jsp"></a>MessageArchiever.jsp</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page language="java" contentType="text/html; charset=utf-8"</div><div class="line">	pageEncoding="utf-8"%&gt;</div><div class="line">&lt;%@ page</div><div class="line">	import="java.text.SimpleDateFormat,koi.StringUtil"%&gt;</div><div class="line">&lt;%@ include file="/header.jsp"%&gt;</div><div class="line">&lt;jsp:useBean id="guestbook" class="koi.Guestbook"&gt;&lt;/jsp:useBean&gt;</div><div class="line">&lt;jsp:useBean id="mysqlutil" class="koi.MySQLUtil"&gt;&lt;/jsp:useBean&gt;</div><div class="line">&lt;jsp:setProperty property="*" name="guestbook"/&gt;</div><div class="line">&lt;%</div><div class="line">	int result = 0;</div><div class="line"></div><div class="line">	// 设置编码</div><div class="line">	request.setCharacterEncoding("utf-8");</div><div class="line">	// 要执行的SQL语句</div><div class="line">	String sql = "insert into book(name,email,phone,title,content,publishtime) values(?,?,?,?,?,?)";</div><div class="line"></div><div class="line">	String name = guestbook.getName();</div><div class="line">	String email = guestbook.getEmail();</div><div class="line">	String phone = guestbook.getPhone();</div><div class="line">	String topic = guestbook.getTopic();</div><div class="line">	String content = guestbook.getContent();</div><div class="line">	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");</div><div class="line"></div><div class="line">	Object[] param = &#123; name, email, phone, topic, content, sdf.format(new java.util.Date()) &#125;;</div><div class="line"></div><div class="line">	mysqlutil.setDataSourceName("java:/comp/env/jdbc/mysql");</div><div class="line">	mysqlutil.init();		</div><div class="line">	result = mysqlutil.update(sql, param);</div><div class="line">	response.getWriter().append(Integer.toString(result));</div><div class="line">%&gt;</div><div class="line">&lt;%@ include file="/footer.jsp"%&gt;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -401,9 +406,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+            <a href="/tags/JavaBean/" rel="tag"># JavaBean</a>
           
-            <a href="/tags/DbUtils/" rel="tag"># DbUtils</a>
+            <a href="/tags/JSP/" rel="tag"># JSP</a>
+          
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -412,8 +419,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/11/Using_DBCP_Setup/" rel="next" title="通过Tomcat的DBCP连接MySQL">
-                <i class="fa fa-chevron-left"></i> 通过Tomcat的DBCP连接MySQL
+              <a href="/2017/10/13/Servlet-to-JSP/" rel="next" title="把Servlet.java升级成JSP">
+                <i class="fa fa-chevron-left"></i> 把Servlet.java升级成JSP
               </a>
             
           </div>
@@ -421,10 +428,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/13/Servlet-to-JSP/" rel="prev" title="把Servlet.java升级成JSP">
-                把Servlet.java升级成JSP <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -605,7 +608,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MessageArchiever-java"><span class="nav-number">1.</span> <span class="nav-text">MessageArchiever.java</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Guestbook-java"><span class="nav-number">1.</span> <span class="nav-text">Guestbook.java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQLUtil-java"><span class="nav-number">2.</span> <span class="nav-text">MySQLUtil.java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MessageArchiever-jsp"><span class="nav-number">3.</span> <span class="nav-text">MessageArchiever.jsp</span></a></li></ol></div>
             
 
           </div>
@@ -718,9 +721,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'akillcool';
-      var disqus_identifier = '2017/10/11/Using_commons_dbutils/';
+      var disqus_identifier = '2017/10/13/JavaBean-and-JSP/';
 
-      var disqus_title = "使用Commons DbUtils进行JDBC数据库连接";
+      var disqus_title = "JavaBean和JSP";
 
 
       function run_disqus_script(disqus_script) {
