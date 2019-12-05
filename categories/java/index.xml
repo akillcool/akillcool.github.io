@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on Koi</title>
+    <link>https://akillcool.github.io/categories/java/</link>
+    <description>Recent content in java on Koi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Koi</copyright>
+    <lastBuildDate>Fri, 13 Oct 2017 21:55:27 +0000</lastBuildDate>
+    
+	<atom:link href="https://akillcool.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaBean和JSP</title>
+      <link>https://akillcool.github.io/post/javabean-and-jsp/</link>
+      <pubDate>Fri, 13 Oct 2017 21:55:27 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/javabean-and-jsp/</guid>
+      <description>使用JavaBean规范，编写Guestbook类和MySQLUtil类，在MessageArchiever.jsp中使用getter和se</description>
+    </item>
+    
+    <item>
+      <title>把Servlet.java升级成JSP</title>
+      <link>https://akillcool.github.io/post/servlet-to-jsp/</link>
+      <pubDate>Fri, 13 Oct 2017 09:28:48 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/servlet-to-jsp/</guid>
+      <description>修改时记得删掉Tomcat server里面web.xml的相关配置，context.xml不要修改。 新建header.jsp，footer.</description>
+    </item>
+    
+    <item>
+      <title>使用Commons DbUtils进行JDBC数据库连接</title>
+      <link>https://akillcool.github.io/post/using_commons_dbutils/</link>
+      <pubDate>Wed, 11 Oct 2017 16:15:47 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/using_commons_dbutils/</guid>
+      <description>首先直接把jar包放在/WebContent/WEB-INF/lib目录下。 通过buildpath添加可能会有异常。 MessageArchiever.java {% codeblock lang:java %} import java.io.IOException; import java.sql.Connection; import java.sql.PreparedStatement; import</description>
+    </item>
+    
+    <item>
+      <title>通过Tomcat的DBCP连接MySQL</title>
+      <link>https://akillcool.github.io/post/using_dbcp_setup/</link>
+      <pubDate>Wed, 11 Oct 2017 11:27:44 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/using_dbcp_setup/</guid>
+      <description>修改Servers目录下Tomcat的web.xml和context.xml两个配置文件 web.xml 增加如下代码： {% codeblock lang:xml %} DB Connectionjdbc/mysqljavax.sql.DataSourceContainer{% endcodeblock %} context.xml 增加如下代码： {% codeblock</description>
+    </item>
+    
+    <item>
+      <title>通过JDBC连接MySQL</title>
+      <link>https://akillcool.github.io/post/jdbc-database-sample/</link>
+      <pubDate>Mon, 02 Oct 2017 23:31:27 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/jdbc-database-sample/</guid>
+      <description>Talk is cheap, just show the code. {% codeblock lang:java %} import java.sql.*; public class MySQLTest { public static void main(String[] args) throws Exception { // 驱动程序名 String driver = &amp;quot;com.mysql.jdbc.Driver&amp;quot;; // URL指向要访问的数据库名abc，useSSL=false使控制台不</description>
+    </item>
+    
+    <item>
+      <title>一个jQuery-validation实例</title>
+      <link>https://akillcool.github.io/post/servlet-and-jquery-validate/</link>
+      <pubDate>Mon, 02 Oct 2017 22:35:34 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/servlet-and-jquery-validate/</guid>
+      <description>主要内容就是写了一个很简陋的HTML页面，上面有一个表单，然后提交给Servlet，Servlet返回表单输入的内容（用户名和密码）。 稍微有</description>
+    </item>
+    
+  </channel>
+</rss>
