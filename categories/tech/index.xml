@@ -32,6 +32,17 @@
     </item>
     
     <item>
+      <title>双网卡双ISP基于源地址的路由配置</title>
+      <link>https://akillcool.github.io/post/routing-double-network/</link>
+      <pubDate>Wed, 31 Oct 2018 10:48:14 +0800</pubDate>
+      
+      <guid>https://akillcool.github.io/post/routing-double-network/</guid>
+      <description>&lt;p&gt;实验室集群新拉了电信宽带，还有公网IP，带宽虽然很小，平常不用来传文件的话，只是ssh倒是足够了。&lt;/p&gt;
+&lt;p&gt;但是集群内肯定是不能直接用电信宽带了，还是应该默认用教育网来访问网络。&lt;/p&gt;
+&lt;p&gt;于是就有了下面对双网卡和路由的配置。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>JavaBean和JSP</title>
       <link>https://akillcool.github.io/post/javabean-and-jsp/</link>
       <pubDate>Fri, 13 Oct 2017 21:55:27 +0000</pubDate>
