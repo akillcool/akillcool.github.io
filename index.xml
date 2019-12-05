@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Koi</copyright>
-    <lastBuildDate>Wed, 04 Dec 2019 19:25:03 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Dec 2019 22:53:30 +0800</lastBuildDate>
     
 	<atom:link href="https://akillcool.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hexo =&gt; Hugo</title>
+      <link>https://akillcool.github.io/post/migrate-from-hexo-to-hugo/</link>
+      <pubDate>Thu, 05 Dec 2019 22:53:30 +0800</pubDate>
+      
+      <guid>https://akillcool.github.io/post/migrate-from-hexo-to-hugo/</guid>
+      <description>&lt;p&gt;Hexo用久了，感觉静态页面生成时间太久，同时又懒得对整个项目做备份，导致常常有想写博客的想法的时候，都会因为觉得麻烦而打消。
+于是，今天尝试迁移到了Hugo，体验意外的不错。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>ArchLinux开启Hibernate休眠</title>

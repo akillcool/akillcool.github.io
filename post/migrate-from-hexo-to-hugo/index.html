@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>ArchLinux开启Hibernate休眠 - Koi</title>
+  <title>Hexo =&gt; Hugo - Koi</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Koi" /><meta name="description" content="通过swap分区进行休眠，首先通过blkid命令找到swap分区对应的uuid 然后通过grub修改内核启动参数 vim /etc/default/grub 修改GRUB_CMDLIN" /><meta name="keywords" content="Koi" />
+<meta name="author" content="Koi" /><meta name="description" content="blog迁移，从Hexo到Hugo" /><meta name="keywords" content="Koi" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.60.1 with theme even" />
 
 
-<link rel="canonical" href="https://akillcool.github.io/post/archlinux-hibernate-sleep/" />
+<link rel="canonical" href="https://akillcool.github.io/post/migrate-from-hexo-to-hugo/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,23 +38,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="ArchLinux开启Hibernate休眠" />
-<meta property="og:description" content="通过swap分区进行休眠，首先通过blkid命令找到swap分区对应的uuid 然后通过grub修改内核启动参数 vim /etc/default/grub 修改GRUB_CMDLIN" />
+<meta property="og:title" content="Hexo =&gt; Hugo" />
+<meta property="og:description" content="blog迁移，从Hexo到Hugo" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://akillcool.github.io/post/archlinux-hibernate-sleep/" />
-<meta property="article:published_time" content="2019-12-04T19:25:03+00:00" />
-<meta property="article:modified_time" content="2019-12-04T19:25:03+00:00" />
-<meta itemprop="name" content="ArchLinux开启Hibernate休眠">
-<meta itemprop="description" content="通过swap分区进行休眠，首先通过blkid命令找到swap分区对应的uuid 然后通过grub修改内核启动参数 vim /etc/default/grub 修改GRUB_CMDLIN">
-<meta itemprop="datePublished" content="2019-12-04T19:25:03&#43;00:00" />
-<meta itemprop="dateModified" content="2019-12-04T19:25:03&#43;00:00" />
-<meta itemprop="wordCount" content="242">
+<meta property="og:url" content="https://akillcool.github.io/post/migrate-from-hexo-to-hugo/" />
+<meta property="article:published_time" content="2019-12-05T22:53:30+08:00" />
+<meta property="article:modified_time" content="2019-12-05T22:53:30+08:00" />
+<meta itemprop="name" content="Hexo =&gt; Hugo">
+<meta itemprop="description" content="blog迁移，从Hexo到Hugo">
+<meta itemprop="datePublished" content="2019-12-05T22:53:30&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-05T22:53:30&#43;08:00" />
+<meta itemprop="wordCount" content="1027">
 
 
 
-<meta itemprop="keywords" content="Arch,Hibernate,休眠," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="ArchLinux开启Hibernate休眠"/>
-<meta name="twitter:description" content="通过swap分区进行休眠，首先通过blkid命令找到swap分区对应的uuid 然后通过grub修改内核启动参数 vim /etc/default/grub 修改GRUB_CMDLIN"/>
+<meta itemprop="keywords" content="Hugo,Hexo," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hexo =&gt; Hugo"/>
+<meta name="twitter:description" content="blog迁移，从Hexo到Hugo"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -121,53 +121,101 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">ArchLinux开启Hibernate休眠</h1>
+      <h1 class="post-title">Hexo =&gt; Hugo</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-12-04 19:25 </span>
+        <span class="post-time"> 2019-12-05 22:53 </span>
         <div class="post-category">
             <a href="/categories/tech/"> tech </a>
-            <a href="/categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 约 242 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 1027 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
         
       </div>
     </header>
 
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">文章目录</h2>
-  <div class="post-toc-content">
-    <nav id="TableOfContents"></nav>
-  </div>
-</div>
+    
     <div class="post-content">
-      <p>通过swap分区进行休眠，首先通过<code>blkid</code>命令找到swap分区对应的uuid
-然后通过grub修改内核启动参数</p>
-<pre><code>vim /etc/default/grub
-</code></pre><p>修改<code>GRUB_CMDLINE_LINUX_DEFAULT</code>，添加resume字段：</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;loglevel=3 quiet resume=UUID=aa0818ea-d9d6-4b52-9818-9d7f54346e38&quot;
-</code></pre><p>完成后更新grub</p>
-<!-- raw HTML omitted -->
-<pre><code>sudo grub-mkconfig -o /boot/grub/grub.cfg
-</code></pre><p>修改初始化内存盘镜像的hook扩展配置</p>
-<pre><code>sudo vim /etc/mkinitcpio.conf
-</code></pre><p>添加resume的hook，注意一定要放到udev后面</p>
-<pre><code># 添加前
-HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)
-# 添加后
-HOOKS=(base udev autodetect modconf block filesystems keyboard resume fsck)
-</code></pre><p>完成后重新生成初始化内存盘镜像</p>
-<pre><code>sudo mkinitcpio -p linux
-</code></pre><p>测试休眠</p>
-<pre><code>systemctl hibernate
-</code></pre><p>参考阅读：</p>
+      <p>Hexo用久了，感觉静态页面生成时间太久，同时又懒得对整个项目做备份，导致常常有想写博客的想法的时候，都会因为觉得麻烦而打消。
+于是，今天尝试迁移到了Hugo，体验意外的不错。</p>
+<p>Hexo和Hugo的Markdown文档基本上都是通用的，基本上可以做到无痛迁移，同时也修改了评论插件，Disqus墙内基本上都是访问不到的，现在修改成了<a href="https://github.com/imsun/gitment">Gitment</a>，发现通过Issus的方式来进行评论也相当不错。</p>
+<h1 id="heading">迁移过程</h1>
+<p>参考<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#put-it-into-a-script">Hugo官方文档</a>，通过submodule来同时管理源文档和静态页面，并保留原有hexo的commit，步骤如下：</p>
 <ol>
-<li><a href="https://wiki.archlinux.org/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">mkinitcpio (简体中文) - ArchWiki</a></li>
-<li><a href="https://wiki.archlinux.org/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">Kernel parameters (简体中文) - ArchWiki</a></li>
-<li><a href="https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate">Power management/Suspend and hibernate - ArchWiki</a></li>
+<li>新建一个Hugo项目mysite，可以先进入mysite中配置Hugo主题、迁移原有hexo文档等&hellip;搞定之后别忘了用hugo server命令预览一下</li>
 </ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">hugo new site mysite
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>新建一个git仓库<a href="https://github.com/akillcool/blog">github.com/akillcool/blog</a>，用于保存整个hugo项目，建议仓库权限改为<code>Private</code>，clone整个空仓库下来，并将hugo项目copy到这个仓库中去。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># clone空仓库</span>
+git clone git@github.com:akillcool/blog.git
 
+<span class="c1"># 进入blog目录</span>
+<span class="nb">cd</span> blog
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>通过git submodule来clone下来之前的Hexo静态文件，并删掉以前的Hexo静态文件</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 添加Github Pages对应的仓库为git submodule，并clone到public目录</span>
+git submodule add -b master git@github.com:akillcool/akillcool.github.io.git public
+
+<span class="c1"># 删除原有的Hexo文件</span>
+rm -rf ./public/*
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>复制mysite中的内容到blog目录下</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">cp -r path/to/mysite/* path/to/blog/
+</code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>部署</li>
+</ol>
+<p>这里按照官方文档的建议写了一个部署脚本，每次发布的时候执行一次脚本就行了
+<script type="application/javascript" src="https://gist.github.com/akillcool/5387ed855c7cfe9c1b1878441d6c4962.js"></script>
+</p>
+<h1 id="heading1">踩坑</h1>
+<p>使用git submodule的话，就别打开<code>enableGitInfo</code>选项了，它会错误地把父项目的git Hash给展示到文章中。看到Hugo项目有人提了个PR解决这个问题，但是到现在都还没有被merge：</p>
+<ul>
+<li>PR：<a href="https://github.com/gohugoio/hugo/pull/5535"><a href="https://github.com/gohugoio/hugo/pull/5535">https://github.com/gohugoio/hugo/pull/5535</a></a></li>
+<li>Issue：<a href="https://github.com/gohugoio/hugo/issues/5533"><a href="https://github.com/gohugoio/hugo/issues/5533">https://github.com/gohugoio/hugo/issues/5533</a></a></li>
+</ul>
+<h1 id="heading2">总结</h1>
+<p>通过git submodule来同时管理Hugo项目和Github Pages网站项目更加方便，把配置文件放到私有仓库也相对安全一点点。写完Markdown文档，执行一次部署脚本，所有东西就全部备份归档了。这种便利性，也让人更能燃起写blog的欲望。</p>
+<p>最后安利一下，Hugo的<a href="https://gohugo.io/content-management/shortcodes">Shortcodes</a>很好用，上面的gist就是用Shortcodes插入的。</p>
     </div>
 
     <div class="post-copyright">
@@ -178,7 +226,7 @@ HOOKS=(base udev autodetect modconf block filesystems keyboard resume fsck)
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-12-04 19:25
+        2019-12-05 22:53
         
     </span>
   </p>
@@ -190,18 +238,13 @@ HOOKS=(base udev autodetect modconf block filesystems keyboard resume fsck)
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/arch/">Arch</a>
-          <a href="/tags/hibernate/">Hibernate</a>
-          <a href="/tags/%E4%BC%91%E7%9C%A0/">休眠</a>
+          <a href="/tags/hugo/">Hugo</a>
+          <a href="/tags/hexo/">Hexo</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/migrate-from-hexo-to-hugo/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Hexo =&gt; Hugo</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/thought-in-this-very-night/">
-            <span class="next-text nav-default">静夜思</span>
+        
+        <a class="next" href="/post/archlinux-hibernate-sleep/">
+            <span class="next-text nav-default">ArchLinux开启Hibernate休眠</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -214,10 +257,10 @@ HOOKS=(base udev autodetect modconf block filesystems keyboard resume fsck)
     <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitment = new Gitment({
-        id: '2019-12-04 19:25:03 \x2b0000 UTC',
-        title: 'ArchLinux开启Hibernate休眠',
+        id: '2019-12-05 22:53:30 \x2b0800 CST',
+        title: 'Hexo =\x3e Hugo',
         link: decodeURI(location.href),
-        desc: '通过swap分区进行休眠，首先通过blkid命令找到swap分区对应的uuid 然后通过grub修改内核启动参数 vim \/etc\/default\/grub 修改GRUB_CMDLIN',
+        desc: '\x3cp\x3eHexo用久了，感觉静态页面生成时间太久，同时又懒得对整个项目做备份，导致常常有想写博客的想法的时候，都会因为觉得麻烦而打消。\n于是，今天尝试迁移到了Hugo，体验意外的不错。\x3c\/p\x3e',
         owner: 'akillcool',
         repo: 'akillcool.github.io',
         oauth: {

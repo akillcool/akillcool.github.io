@@ -2,6 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://akillcool.github.io/categories/</loc>
+    <lastmod>2019-12-05T22:53:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://akillcool.github.io/tags/hexo/</loc>
+    <lastmod>2019-12-05T22:53:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://akillcool.github.io/post/migrate-from-hexo-to-hugo/</loc>
+    <lastmod>2019-12-05T22:53:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://akillcool.github.io/tags/hugo/</loc>
+    <lastmod>2019-12-05T22:53:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://akillcool.github.io/</loc>
+    <lastmod>2019-12-05T22:53:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://akillcool.github.io/post/</loc>
+    <lastmod>2019-12-05T22:53:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://akillcool.github.io/tags/</loc>
+    <lastmod>2019-12-05T22:53:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://akillcool.github.io/categories/tech/</loc>
+    <lastmod>2019-12-05T22:53:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://akillcool.github.io/tags/arch/</loc>
     <lastmod>2019-12-04T19:25:03+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -16,13 +72,6 @@
   </url>
   
   <url>
-    <loc>https://akillcool.github.io/categories/</loc>
-    <lastmod>2019-12-04T19:25:03+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://akillcool.github.io/tags/hibernate/</loc>
     <lastmod>2019-12-04T19:25:03+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -30,35 +79,7 @@
   </url>
   
   <url>
-    <loc>https://akillcool.github.io/</loc>
-    <lastmod>2019-12-04T19:25:03+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://akillcool.github.io/categories/linux/</loc>
-    <lastmod>2019-12-04T19:25:03+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://akillcool.github.io/post/</loc>
-    <lastmod>2019-12-04T19:25:03+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://akillcool.github.io/tags/</loc>
-    <lastmod>2019-12-04T19:25:03+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://akillcool.github.io/categories/tech/</loc>
     <lastmod>2019-12-04T19:25:03+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

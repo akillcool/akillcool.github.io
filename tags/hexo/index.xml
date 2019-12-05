@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hexo on Koi</title>
+    <link>https://akillcool.github.io/tags/hexo/</link>
+    <description>Recent content in Hexo on Koi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Koi</copyright>
+    <lastBuildDate>Thu, 05 Dec 2019 22:53:30 +0800</lastBuildDate>
+    
+	<atom:link href="https://akillcool.github.io/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hexo =&gt; Hugo</title>
+      <link>https://akillcool.github.io/post/migrate-from-hexo-to-hugo/</link>
+      <pubDate>Thu, 05 Dec 2019 22:53:30 +0800</pubDate>
+      
+      <guid>https://akillcool.github.io/post/migrate-from-hexo-to-hugo/</guid>
+      <description>&lt;p&gt;Hexo用久了，感觉静态页面生成时间太久，同时又懒得对整个项目做备份，导致常常有想写博客的想法的时候，都会因为觉得麻烦而打消。
+于是，今天尝试迁移到了Hugo，体验意外的不错。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Koi</copyright>
-    <lastBuildDate>Wed, 04 Dec 2019 19:25:03 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Dec 2019 22:53:30 +0800</lastBuildDate>
     
 	<atom:link href="https://akillcool.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hexo</title>
+      <link>https://akillcool.github.io/tags/hexo/</link>
+      <pubDate>Thu, 05 Dec 2019 22:53:30 +0800</pubDate>
+      
+      <guid>https://akillcool.github.io/tags/hexo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://akillcool.github.io/tags/hugo/</link>
+      <pubDate>Thu, 05 Dec 2019 22:53:30 +0800</pubDate>
+      
+      <guid>https://akillcool.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Arch</title>
