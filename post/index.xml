@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Koi</title>
+    <link>https://akillcool.github.io/post/</link>
+    <description>Recent content in Posts on Koi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Koi</copyright>
+    <lastBuildDate>Wed, 04 Dec 2019 19:25:03 +0000</lastBuildDate>
+    
+	<atom:link href="https://akillcool.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ArchLinux开启Hibernate休眠</title>
+      <link>https://akillcool.github.io/post/archlinux-hibernate-sleep/</link>
+      <pubDate>Wed, 04 Dec 2019 19:25:03 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/archlinux-hibernate-sleep/</guid>
+      <description>通过swap分区进行休眠，首先通过blkid命令找到swap分区对应的uuid 然后通过grub修改内核启动参数 vim /etc/default/grub 修改GRUB_CMDLIN</description>
+    </item>
+    
+    <item>
+      <title>静夜思</title>
+      <link>https://akillcool.github.io/post/thought-in-this-very-night/</link>
+      <pubDate>Fri, 15 Mar 2019 00:17:04 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/thought-in-this-very-night/</guid>
+      <description>敲下这句话的时候刚刚好是零点，仓促编完了今天的钉钉日报，今天虽然没有下雨，也有点阴阴沉沉的，外面蛙声一片。 算是第一次经历大厂的面试，阿里的面</description>
+    </item>
+    
+    <item>
+      <title>JavaBean和JSP</title>
+      <link>https://akillcool.github.io/post/javabean-and-jsp/</link>
+      <pubDate>Fri, 13 Oct 2017 21:55:27 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/javabean-and-jsp/</guid>
+      <description>使用JavaBean规范，编写Guestbook类和MySQLUtil类，在MessageArchiever.jsp中使用getter和se</description>
+    </item>
+    
+    <item>
+      <title>把Servlet.java升级成JSP</title>
+      <link>https://akillcool.github.io/post/servlet-to-jsp/</link>
+      <pubDate>Fri, 13 Oct 2017 09:28:48 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/servlet-to-jsp/</guid>
+      <description>修改时记得删掉Tomcat server里面web.xml的相关配置，context.xml不要修改。 新建header.jsp，footer.</description>
+    </item>
+    
+    <item>
+      <title>使用Commons DbUtils进行JDBC数据库连接</title>
+      <link>https://akillcool.github.io/post/using_commons_dbutils/</link>
+      <pubDate>Wed, 11 Oct 2017 16:15:47 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/using_commons_dbutils/</guid>
+      <description>首先直接把jar包放在/WebContent/WEB-INF/lib目录下。 通过buildpath添加可能会有异常。 MessageArchiever.java {% codeblock lang:java %} import java.io.IOException; import java.sql.Connection; import java.sql.PreparedStatement; import</description>
+    </item>
+    
+    <item>
+      <title>通过Tomcat的DBCP连接MySQL</title>
+      <link>https://akillcool.github.io/post/using_dbcp_setup/</link>
+      <pubDate>Wed, 11 Oct 2017 11:27:44 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/using_dbcp_setup/</guid>
+      <description>修改Servers目录下Tomcat的web.xml和context.xml两个配置文件 web.xml 增加如下代码： {% codeblock lang:xml %} DB Connectionjdbc/mysqljavax.sql.DataSourceContainer{% endcodeblock %} context.xml 增加如下代码： {% codeblock</description>
+    </item>
+    
+    <item>
+      <title>通过JDBC连接MySQL</title>
+      <link>https://akillcool.github.io/post/jdbc-database-sample/</link>
+      <pubDate>Mon, 02 Oct 2017 23:31:27 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/jdbc-database-sample/</guid>
+      <description>Talk is cheap, just show the code. {% codeblock lang:java %} import java.sql.*; public class MySQLTest { public static void main(String[] args) throws Exception { // 驱动程序名 String driver = &amp;quot;com.mysql.jdbc.Driver&amp;quot;; // URL指向要访问的数据库名abc，useSSL=false使控制台不</description>
+    </item>
+    
+    <item>
+      <title>一个jQuery-validation实例</title>
+      <link>https://akillcool.github.io/post/servlet-and-jquery-validate/</link>
+      <pubDate>Mon, 02 Oct 2017 22:35:34 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/servlet-and-jquery-validate/</guid>
+      <description>主要内容就是写了一个很简陋的HTML页面，上面有一个表单，然后提交给Servlet，Servlet返回表单输入的内容（用户名和密码）。 稍微有</description>
+    </item>
+    
+    <item>
+      <title>Sarah是个死傲娇</title>
+      <link>https://akillcool.github.io/post/sarah-is-cengdelei/</link>
+      <pubDate>Sun, 19 Mar 2017 07:56:50 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/sarah-is-cengdelei/</guid>
+      <description>我有女朋友了，她是个死傲娇。</description>
+    </item>
+    
+    <item>
+      <title>尘埃落定</title>
+      <link>https://akillcool.github.io/post/the-dust-has-settled/</link>
+      <pubDate>Mon, 13 Mar 2017 22:35:01 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/the-dust-has-settled/</guid>
+      <description>&lt;p&gt;&lt;em&gt;“结束了，终于结束了。”&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;这大概是我看到成绩时内心的第一个想法。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>C#读取Xml文件</title>
+      <link>https://akillcool.github.io/post/xml_file_reading_in_csharp/</link>
+      <pubDate>Sat, 18 Feb 2017 14:09:01 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/xml_file_reading_in_csharp/</guid>
+      <description>&lt;p&gt;描述：读取xml文件中的信息，将其输出。&lt;/p&gt;
+&lt;p&gt;主要使用了XmlDocument 类，具体可在&lt;a href=&#34;https://msdn.microsoft.com/zh-cn/library/system.xml.xmldocument.aspx&#34;&gt;MSDN&lt;/a&gt;上查阅。&lt;/p&gt;
+&lt;p&gt;注意在读取文件时用Load()方法而不是LoadXml()，否则可能会出现类似于错误如下：&lt;/p&gt;
+&lt;p&gt;“读取XML 错误：根级别上的数据无效。 第 1 行，位置 1”&lt;/p&gt;
+&lt;p&gt;要读取的xml文件：test.xml&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>新年</title>
+      <link>https://akillcool.github.io/post/new-year/</link>
+      <pubDate>Sat, 28 Jan 2017 01:48:24 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/new-year/</guid>
+      <description>现在是农历2017年春节，第一次和爸爸以及哥哥三个人一起喝酒聊天。 新的一年，我的征途是星辰大海。 新年快乐。</description>
+    </item>
+    
+    <item>
+      <title>祝我早日修炼成精</title>
+      <link>https://akillcool.github.io/post/until-i-become-a-demon/</link>
+      <pubDate>Tue, 17 Jan 2017 09:41:03 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/until-i-become-a-demon/</guid>
+      <description>谢谢大家。</description>
+    </item>
+    
+    <item>
+      <title>博客数据迁移</title>
+      <link>https://akillcool.github.io/post/blog-data-magraton/</link>
+      <pubDate>Wed, 14 Dec 2016 01:05:20 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/blog-data-magraton/</guid>
+      <description>把以前的Wordpress数据迁移过来了，15年写的东西因为SAE挂了没有备份。 人生就是一个不断认识到以前的自己是个傻逼的过程。</description>
+    </item>
+    
+    <item>
+      <title>晚睡的最终极解决方法</title>
+      <link>https://akillcool.github.io/post/sleep-late/</link>
+      <pubDate>Wed, 07 Dec 2016 02:50:36 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/sleep-late/</guid>
+      <description>今天又熬夜了。 1 最可怕的不是熬夜，而是第二天晚起后的精神状态会极差，然后恶性循环。 熬夜的原因很简单，自己作的，不是不能睡，而是不想睡。 晚睡强</description>
+    </item>
+    
+    <item>
+      <title>一些摘录和想法</title>
+      <link>https://akillcool.github.io/post/thoughts/</link>
+      <pubDate>Mon, 31 Oct 2016 23:11:33 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/thoughts/</guid>
+      <description>关于孤独 我觉得孤独是成就一切的根源。 当然并不是说，不与任何的人来往。 而是每天都和无数的人打交道，也时刻明白自己是彻底孤独的。 不用担心他人的决</description>
+    </item>
+    
+    <item>
+      <title>一个删除字符的错误</title>
+      <link>https://akillcool.github.io/post/delete-ch/</link>
+      <pubDate>Thu, 18 Aug 2016 13:52:50 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/delete-ch/</guid>
+      <description>Description 删除一个字符数组中指定的字符，对删除的字符个数计数，然后按照计数移动数组中的元素 Algorithm {% codeblock lang:c %} #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;string.h&amp;gt; #define MAXSIZE 100 typedef struct { char ch[MAXSIZE + 1]; int length; } Str; void delete_ch(Str &amp;amp;str, char ch) {</description>
+    </item>
+    
+    <item>
+      <title>递归实现n个不同字符的全排列</title>
+      <link>https://akillcool.github.io/post/recursion-full-array/</link>
+      <pubDate>Mon, 15 Aug 2016 02:08:26 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/recursion-full-array/</guid>
+      <description>Description 设str是含有n个不同字符的数组，perm(str,k-1,n)为str[0]`~str[k-1]的所有字符的全排列。很明显，perm(s</description>
+    </item>
+    
+    <item>
+      <title>了解Markdown</title>
+      <link>https://akillcool.github.io/post/learn-markdown/</link>
+      <pubDate>Sun, 14 Aug 2016 00:19:01 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/learn-markdown/</guid>
+      <description>这篇文档来自于riku/Markdown-Syntax-CN， 我只是改变了阅读顺序使它更易于一步步自己写出来。 首先，我们来看如何建立一个区块</description>
+    </item>
+    
+    <item>
+      <title>Hello World Again</title>
+      <link>https://akillcool.github.io/post/hello-world/</link>
+      <pubDate>Sat, 13 Aug 2016 19:58:00 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/hello-world/</guid>
+      <description>又一个新blog，powered by Hexo。</description>
+    </item>
+    
+    <item>
+      <title>从你的世界消失</title>
+      <link>https://akillcool.github.io/post/fade-away/</link>
+      <pubDate>Sun, 06 Apr 2014 02:22:42 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/fade-away/</guid>
+      <description>就像从来没有存在过</description>
+    </item>
+    
+    <item>
+      <title>不作死就不会死</title>
+      <link>https://akillcool.github.io/post/no-zuo-no-die/</link>
+      <pubDate>Sat, 07 Dec 2013 16:56:24 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/no-zuo-no-die/</guid>
+      <description>自制力越来越差了。每每这个时候，总是回想起高中时妈妈有一次骂我的时候说的两个字：贪婪。没错，就是贪婪。按照我的理解，就是习惯安逸并且想要不断</description>
+    </item>
+    
+    <item>
+      <title>专注的做一件事，我会变成什么样？</title>
+      <link>https://akillcool.github.io/post/focus/</link>
+      <pubDate>Wed, 16 Oct 2013 09:30:13 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/focus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>解锁成就：骑车去黄河</title>
+      <link>https://akillcool.github.io/post/ride-to-yellow-river/</link>
+      <pubDate>Mon, 16 Sep 2013 21:06:22 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/ride-to-yellow-river/</guid>
+      <description>&lt;p&gt;时间：8：30～15：30    2013/9/16&lt;/p&gt;
+&lt;p&gt;/w 基友&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://mapsengine.google.com/map/edit?mid=zV91ie8Qyz-0.k3nQHvXPpy-0&#34; title=&#34;骑行路线图&#34;&gt;路线图&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;沿路：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.moepicx.cc/images/2017/01/08/dec7b05d6de6d0a084ce531f60d56eae.jpg&#34; alt=&#34;dec7b05d6de6d0a084ce531f60d56eae.jpg&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>盲从</title>
+      <link>https://akillcool.github.io/post/follow-like-sheep/</link>
+      <pubDate>Mon, 27 May 2013 13:44:46 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/follow-like-sheep/</guid>
+      <description>慢慢的，生活又变麻木了。 两个星期没有码字了，我总会在一件事上面越变越懒。今天星期一，星期三上午VB考试，真担心自己这样一直不复习会挂科，电脑</description>
+    </item>
+    
+    <item>
+      <title>渐渐</title>
+      <link>https://akillcool.github.io/post/little-by-little/</link>
+      <pubDate>Tue, 14 May 2013 23:44:14 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/little-by-little/</guid>
+      <description>Blog的主站貌似最近常常抽风，时不时无法访问，或者只能通过代理访问。 这周植物生物学实验要考试了，考的是各种各样的切片观察，据说是每个人随便</description>
+    </item>
+    
+    <item>
+      <title>我在</title>
+      <link>https://akillcool.github.io/post/im-here/</link>
+      <pubDate>Mon, 06 May 2013 01:39:28 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/im-here/</guid>
+      <description>青春都是这样子吧？大部分时间闲的发慌，只留几个瞬间用来成长。 在Twitter上看到这样一句话，很符合现实吧。 今天晚上五四晚会暨评奖晚会，晚会</description>
+    </item>
+    
+    <item>
+      <title>Trouble is a Friend</title>
+      <link>https://akillcool.github.io/post/trouble-is-a-friend/</link>
+      <pubDate>Sun, 28 Apr 2013 16:04:44 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/trouble-is-a-friend/</guid>
+      <description>这个星期，做出了一点改变。希望能够坚持下去。首先是坚持每天起床去食堂吃饭，其次&amp;hellip;好吧这个“其次”让父上母上看到一定会打断我的腿</description>
+    </item>
+    
+    <item>
+      <title>改变</title>
+      <link>https://akillcool.github.io/post/change/</link>
+      <pubDate>Sun, 21 Apr 2013 11:45:23 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/change/</guid>
+      <description>一觉睡到自然醒。 又是一个周日，寝室里一人已经出门陪妹子去了，另外三人不知道昨天晚上LOL到几点钟昨天晚上LOL到5点钟，到现在一个都还没醒，</description>
+    </item>
+    
+    <item>
+      <title>聚</title>
+      <link>https://akillcool.github.io/post/party/</link>
+      <pubDate>Mon, 15 Apr 2013 21:01:01 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/party/</guid>
+      <description>本来应该昨天就写下这一篇的，但是由于种种原因好吧其实借口是昨天是我人生中18年喝的最多的一次，实在是睡意沉沉，hold不住扑向了枕头。 昨晚是</description>
+    </item>
+    
+  </channel>
+</rss>

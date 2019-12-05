@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arch on Koi</title>
+    <link>https://akillcool.github.io/tags/arch/</link>
+    <description>Recent content in Arch on Koi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Koi</copyright>
+    <lastBuildDate>Wed, 04 Dec 2019 19:25:03 +0000</lastBuildDate>
+    
+	<atom:link href="https://akillcool.github.io/tags/arch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ArchLinux开启Hibernate休眠</title>
+      <link>https://akillcool.github.io/post/archlinux-hibernate-sleep/</link>
+      <pubDate>Wed, 04 Dec 2019 19:25:03 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/archlinux-hibernate-sleep/</guid>
+      <description>通过swap分区进行休眠，首先通过blkid命令找到swap分区对应的uuid 然后通过grub修改内核启动参数 vim /etc/default/grub 修改GRUB_CMDLIN</description>
+    </item>
+    
+  </channel>
+</rss>

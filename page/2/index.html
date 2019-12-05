@@ -1,1030 +1,409 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh-cn">
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Koi</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-    <!--[if lt IE 9]>
-        <style>body {display: none; background: none !important} </style>
-        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
-    <![endif]-->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="format-detection" content="telephone=no" />
-<meta name="author" content="Koi" />
-
-
-    
-    
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="description" content="Life is simple, you make choices, you don&apos;t look back.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Koi">
-<meta property="og:url" content="https://akillcool.github.io/page/2/index.html">
-<meta property="og:site_name" content="Koi">
-<meta property="og:description" content="Life is simple, you make choices, you don&apos;t look back.">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Koi">
-<meta name="twitter:description" content="Life is simple, you make choices, you don&apos;t look back.">
-
-<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
-
-
-    <link rel="alternate" href="/atom.xml" title="Koi" type="application/atom+xml">
-
-
-
-    <link rel="shortcut icon" href="/favicon.png">
-
-
-
-    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
-
-
-
-    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
-
-
-
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
-
-
-<link rel="stylesheet" href="/css/style.css">
-
-
-    <style> .article { opacity: 0;} </style>
-
-
-<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-
-
-<title>Koi</title>
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-<script>
-    var yiliaConfig = {
-        fancybox: true,
-        animate: true,
-        isHome: true,
-        isPost: false,
-        isArchive: false,
-        isTag: false,
-        isCategory: false,
-        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
-        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: undefined
-    }
-</script>
-
-
-    <script>
-        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
-    </script>
-
-
-
-    <script> yiliaConfig.rootUrl = "\/";</script>
+<meta name="author" content="Koi" /><meta name="description" content="Koi&#39;s site." /><meta name="keywords" content="Koi" />
 
 
 
 
 
+
+<meta name="generator" content="Hugo 0.60.1 with theme even" />
+
+
+<link rel="canonical" href="https://akillcool.github.io/" />
+  <link href="https://akillcool.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Koi" />
+  <link href="https://akillcool.github.io/index.xml" rel="feed" type="application/rss+xml" title="Koi" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.dfa23fec.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Koi" />
+<meta property="og:description" content="Koi&#39;s site." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://akillcool.github.io/" />
+<meta property="og:updated_time" content="2019-12-04T19:25:03+00:00" />
+<meta itemprop="name" content="Koi">
+<meta itemprop="description" content="Koi&#39;s site."><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Koi"/>
+<meta name="twitter:description" content="Koi&#39;s site."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
 
 </head>
 <body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <a href="/" class="profilepic">
-            <img src="/img/avatar.png" class="animated zoomIn">
-        </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/">Koi</a></h1>
-        </hgroup>
-
-        
-
-        
-
-
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
-
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a href="/">主页</a></li>
-                        
-                            <li><a href="/archives/">所有文章</a></li>
-                        
-                            <li><a href="/tags/">标签云</a></li>
-                        
-                            <li><a href="/about/">关于我</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" href="mailto:&#97;&#107;&#105;&#108;&#108;&#99;&#111;&#111;&#108;&#64;&#108;&#105;&#118;&#101;&#46;&#99;&#111;&#109;" title="Email"></a>
-                            
-                                <a class="fa GitHub" href="/akillcool" title="GitHub"></a>
-                            
-                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ArchLinux/">ArchLinux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSharp/">CSharp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DBCP/">DBCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DbUtils/">DbUtils</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/">JDBC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/">JSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaBean/">JavaBean</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tomcat/">Tomcat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xml/">Xml</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recursion/">recursion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/validation/">validation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/一个废柴的自我救赎/">一个废柴的自我救赎</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/休眠/">休眠</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/删除/">删除</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符/">字符</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/孤独/">孤独</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/想法/">想法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的大学/">我的大学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘录/">摘录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/晚睡/">晚睡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/朋友/">朋友</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未来/">未来</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电源管理/">电源管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/错误/">错误</a></li></ul>
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
-                    
-                    </div>
-                </section>
-                
-
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">专注于前端</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>                
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Koi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Koi</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                <img src="/img/avatar.png" class="animated zoomIn">
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">Koi</a></h1>
-            </hgroup>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/">主页</a></li>
-                
-                    <li><a href="/archives/">所有文章</a></li>
-                
-                    <li><a href="/tags/">标签云</a></li>
-                
-                    <li><a href="/about/">关于我</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" target="_blank" href="mailto:&#97;&#107;&#105;&#108;&#108;&#99;&#111;&#111;&#108;&#64;&#108;&#105;&#118;&#101;&#46;&#99;&#111;&#109;" title="Email"></a>
-                            
-                                <a class="fa GitHub" target="_blank" href="/akillcool" title="GitHub"></a>
-                            
-                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
-                            
-                        </ul>
-            </nav>
-        </header>                
-    </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-Xml_file_reading_in_CSharp" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/18/Xml_file_reading_in_CSharp/" class="article-date">
-      <time datetime="2017-02-18T06:09:01.000Z" itemprop="datePublished">2017-02-18</time>
-</a>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Koi</a>
+</div>
 
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
 
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/xml_file_reading_in_csharp/">C#读取Xml文件</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-02-18 14:09 </span>
+      
+        <span class="more-meta"> 约 544 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
     </div>
+  </header>
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/18/Xml_file_reading_in_CSharp/">C#读取Xml文件</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>描述：读取xml文件中的信息，将其输出。</p>
+  <div class="post-content">
+    <div class="post-summary">
+      <p>描述：读取xml文件中的信息，将其输出。</p>
 <p>主要使用了XmlDocument 类，具体可在<a href="https://msdn.microsoft.com/zh-cn/library/system.xml.xmldocument.aspx">MSDN</a>上查阅。</p>
 <p>注意在读取文件时用Load()方法而不是LoadXml()，否则可能会出现类似于错误如下：</p>
 <p>“读取XML 错误：根级别上的数据无效。 第 1 行，位置 1”</p>
-<p>要读取的xml文件：test.xml<br>
-          
-      
+<p>要读取的xml文件：test.xml</p>
     </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Learn/">Learn</a>
+    <div class="read-more">
+      <a href="/post/xml_file_reading_in_csharp/" class="read-more-link">阅读更多</a>
     </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSharp/">CSharp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xml/">Xml</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2017/02/18/Xml_file_reading_in_CSharp/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
-  
 </article>
 
-
-
-
-
-
-
-
-
-  
-    <article id="post-New-year" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/01/28/New-year/" class="article-date">
-      <time datetime="2017-01-27T17:48:24.000Z" itemprop="datePublished">2017-01-28</time>
-</a>
-
-
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/new-year/">新年</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-01-28 01:48 </span>
+      
+        <span class="more-meta"> 约 53 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
+  </header>
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/28/New-year/">新年</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>现在是农历2017年春节，第一次和爸爸以及哥哥三个人一起喝酒聊天。</p>
-<p>新的一年，我的征途是星辰大海。</p>
-<p>新年快乐。</p>
-
-      
+  <div class="post-content">
+    <div class="post-summary">
+      现在是农历2017年春节，第一次和爸爸以及哥哥三个人一起喝酒聊天。 新的一年，我的征途是星辰大海。 新年快乐。
     </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Live/">Live</a>
+    <div class="read-more">
+      <a href="/post/new-year/" class="read-more-link">阅读更多</a>
     </div>
-
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
-  
 </article>
 
-
-
-
-
-
-
-
-
-  
-    <article id="post-Until-I-become-a-demon" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/01/17/Until-I-become-a-demon/" class="article-date">
-      <time datetime="2017-01-17T01:41:03.000Z" itemprop="datePublished">2017-01-17</time>
-</a>
-
-
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/until-i-become-a-demon/">祝我早日修炼成精</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-01-17 09:41 </span>
+      
+        <span class="more-meta"> 约 5 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
+  </header>
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/17/Until-I-become-a-demon/">祝我早日修炼成精</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>谢谢大家。</p>
-
-      
+  <div class="post-content">
+    <div class="post-summary">
+      谢谢大家。
     </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Live/">Live</a>
+    <div class="read-more">
+      <a href="/post/until-i-become-a-demon/" class="read-more-link">阅读更多</a>
     </div>
-
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
-  
 </article>
 
-
-
-
-
-
-
-
-
-  
-    <article id="post-blog-data-magraton" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/12/14/blog-data-magraton/" class="article-date">
-      <time datetime="2016-12-13T17:05:20.000Z" itemprop="datePublished">2016-12-14</time>
-</a>
-
-
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/blog-data-magraton/">博客数据迁移</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-12-14 01:05 </span>
+      
+        <span class="more-meta"> 约 64 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
+  </header>
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/14/blog-data-magraton/">博客数据迁移</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>把以前的Wordpress数据迁移过来了，15年写的东西因为SAE挂了没有备份。</p>
-<p>人生就是一个不断认识到以前的自己是个傻逼的过程。</p>
-
-      
+  <div class="post-content">
+    <div class="post-summary">
+      把以前的Wordpress数据迁移过来了，15年写的东西因为SAE挂了没有备份。 人生就是一个不断认识到以前的自己是个傻逼的过程。
     </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
+    <div class="read-more">
+      <a href="/post/blog-data-magraton/" class="read-more-link">阅读更多</a>
     </div>
-    
   </div>
-  
 </article>
 
-
-
-
-
-
-
-
-
-  
-    <article id="post-Sleep-late" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/12/07/Sleep-late/" class="article-date">
-      <time datetime="2016-12-06T18:50:36.000Z" itemprop="datePublished">2016-12-07</time>
-</a>
-
-
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/sleep-late/">晚睡的最终极解决方法</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-12-07 02:50 </span>
+      
+        <span class="more-meta"> 约 267 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
+  </header>
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/07/Sleep-late/">晚睡的最终极解决方法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>今天又熬夜了。<br><img src="http://www.moepicx.cc/images/2016/12/07/59df1e3d0a0da85019f0244b9e75badf.jpg" alt="59df1e3d0a0da85019f0244b9e75badf.jpg">1<br>最可怕的不是熬夜，而是第二天晚起后的精神状态会极差，然后恶性循环。<br>熬夜的原因很简单，自己作的，不是不能睡，而是不想睡。<br>晚睡强迫症。
-          
-      
+  <div class="post-content">
+    <div class="post-summary">
+      今天又熬夜了。 1 最可怕的不是熬夜，而是第二天晚起后的精神状态会极差，然后恶性循环。 熬夜的原因很简单，自己作的，不是不能睡，而是不想睡。 晚睡强
     </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Think/">Think</a>
+    <div class="read-more">
+      <a href="/post/sleep-late/" class="read-more-link">阅读更多</a>
     </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/一个废柴的自我救赎/">一个废柴的自我救赎</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/想法/">想法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/晚睡/">晚睡</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/12/07/Sleep-late/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
-  
 </article>
 
-
-
-
-
-
-
-
-
-  
-    <article id="post-Thoughts" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/31/Thoughts/" class="article-date">
-      <time datetime="2016-10-31T15:11:33.000Z" itemprop="datePublished">2016-10-31</time>
-</a>
-
-
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/thoughts/">一些摘录和想法</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-10-31 23:11 </span>
+      
+        <span class="more-meta"> 约 630 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
     </div>
+  </header>
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/31/Thoughts/">一些摘录和想法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="关于孤独"><a href="#关于孤独" class="headerlink" title="关于孤独"></a>关于孤独</h2><pre><code>我觉得孤独是成就一切的根源。
-
-当然并不是说，不与任何的人来往。
-
-而是每天都和无数的人打交道，也时刻明白自己是彻底孤独的。
-
-不用担心他人的决定会对自身造成巨大影响，不用花别人的钱，不用考虑别人吃什么喝什么几点睡觉。
-
-于是进而不会尝试和人建立起某种以为稳固的关系。
-
-和周围的人处于相互欣赏的平衡中，也随时可以把这个世界抛在身后。
-
-或者是回到这个世界时，看到这个世界对自己充满赞叹。
-
-而这一切的来源是孤独。
-</code></pre><p>摘自@Livid的豆瓣<br>
-          
-      
+  <div class="post-content">
+    <div class="post-summary">
+      关于孤独 我觉得孤独是成就一切的根源。 当然并不是说，不与任何的人来往。 而是每天都和无数的人打交道，也时刻明白自己是彻底孤独的。 不用担心他人的决
     </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Think/">Think</a>
+    <div class="read-more">
+      <a href="/post/thoughts/" class="read-more-link">阅读更多</a>
     </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/孤独/">孤独</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/想法/">想法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/摘录/">摘录</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/朋友/">朋友</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/10/31/Thoughts/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
-  
 </article>
 
-
-
-
-
-
-
-
-
-  
-    <article id="post-delete-ch" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/18/delete-ch/" class="article-date">
-      <time datetime="2016-08-18T05:52:50.000Z" itemprop="datePublished">2016-08-18</time>
-</a>
-
-
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/delete-ch/">一个删除字符的错误</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-08-18 13:52 </span>
+      
+        <span class="more-meta"> 约 468 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
+  </header>
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/18/delete-ch/">一个删除字符的错误</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>删除一个字符数组中指定的字符，对删除的字符个数计数，然后按照计数移动数组中的元素</p>
-          
-      
+  <div class="post-content">
+    <div class="post-summary">
+      Description 删除一个字符数组中指定的字符，对删除的字符个数计数，然后按照计数移动数组中的元素 Algorithm {% codeblock lang:c %} #include &lt;stdio.h&gt; #include &lt;string.h&gt; #define MAXSIZE 100 typedef struct { char ch[MAXSIZE + 1]; int length; } Str; void delete_ch(Str &amp;str, char ch) {
     </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Learn/">Learn</a>
+    <div class="read-more">
+      <a href="/post/delete-ch/" class="read-more-link">阅读更多</a>
     </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/删除/">删除</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/字符/">字符</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/错误/">错误</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/08/18/delete-ch/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
-  
 </article>
 
-
-
-
-
-
-
-
-
-  
-    <article id="posts-recursion-full-array" class="article article-type-posts" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/15/recursion-full-array/" class="article-date">
-      <time datetime="2016-08-14T18:08:26.000Z" itemprop="datePublished">2016-08-15</time>
-</a>
-
-
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/recursion-full-array/">递归实现n个不同字符的全排列</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-08-15 02:08 </span>
+      
+        <span class="more-meta"> 约 323 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
+  </header>
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/15/recursion-full-array/">递归实现n个不同字符的全排列</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>设<code>str</code>是含有<code>n</code>个不同字符的数组，<code>perm(str,k-1,n)</code>为<code>str[0]</code>~<code>str[k-1]</code>的所有字符的全排列。很明显，<code>perm(str,k-1,n)</code>处理的字符个数比<code>perm(str,k,n)</code>处理的字符个数少一个。</p>
-<p>假定<code>perm(str,k-1,n)</code>可求，<code>str[k]</code>位置可以任取<code>str[0]</code>~<code>str[k]</code>的任何值，再组合<code>perm(str,k-1,n)</code>得到<code>perm(str,k,n)</code>。</p>
-          
-      
+  <div class="post-content">
+    <div class="post-summary">
+      Description 设str是含有n个不同字符的数组，perm(str,k-1,n)为str[0]`~str[k-1]的所有字符的全排列。很明显，perm(s
     </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Learn/">Learn</a>
+    <div class="read-more">
+      <a href="/post/recursion-full-array/" class="read-more-link">阅读更多</a>
     </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursion/">recursion</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/08/15/recursion-full-array/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
-  
 </article>
 
-
-
-
-
-
-
-
-
-  
-    <article id="post-learn-markdown" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/14/learn-markdown/" class="article-date">
-      <time datetime="2016-08-13T16:19:01.000Z" itemprop="datePublished">2016-08-14</time>
-</a>
-
-
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/learn-markdown/">了解Markdown</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-08-14 00:19 </span>
+      
+        <span class="more-meta"> 约 4776 字 </span>
+        <span class="more-meta"> 预计阅读 10 分钟 </span>
     </div>
+  </header>
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/14/learn-markdown/">了解Markdown</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p>这篇文档来自于<a href="https://coding.net/u/riku/p/Markdown-Syntax-CN/git">riku/Markdown-Syntax-CN</a>，<br>我只是改变了阅读顺序使它更易于一步步自己写出来。</p>
-</blockquote>
-<p>首先，我们来看如何建立一个区块，进行markdown语法的演示。</p>
-<h2 id="建立区块"><a href="#建立区块" class="headerlink" title="建立区块"></a>建立区块</h2><p>要在 Markdown 中建立区块很简单，先空一行，然后简单地缩进 4 个空格或是 1 个制表符就可以，例如，下面的输入：</p>
-<pre><code>这是一个示例区块
-区块结束
-</code></pre>
-          
-      
+  <div class="post-content">
+    <div class="post-summary">
+      这篇文档来自于riku/Markdown-Syntax-CN， 我只是改变了阅读顺序使它更易于一步步自己写出来。 首先，我们来看如何建立一个区块
     </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Learn/">Learn</a>
+    <div class="read-more">
+      <a href="/post/learn-markdown/" class="read-more-link">阅读更多</a>
     </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/08/14/learn-markdown/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
-  
 </article>
 
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/13/hello-world/" class="article-date">
-      <time datetime="2016-08-13T11:58:00.000Z" itemprop="datePublished">2016-08-13</time>
-</a>
-
-
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/hello-world/">Hello World Again</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2016-08-13 19:58 </span>
+      
+        <span class="more-meta"> 约 22 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
+  </header>
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/13/hello-world/">Hello World Again</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>又一个新blog，powered by Hexo。</p>
-
-      
+  <div class="post-content">
+    <div class="post-summary">
+      又一个新blog，powered by Hexo。
     </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
+    <div class="read-more">
+      <a href="/post/hello-world/" class="read-more-link">阅读更多</a>
     </div>
-    
   </div>
-  
 </article>
 
-
-
-
-
-
-
-
-
+    </section>
   
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-    </nav>
-  
-</div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                <i class="fa fa-copyright"></i> 
-                2016-2019 Koi
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
-            </div>
+  <nav class="pagination">
+    <a class="prev" href="/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">上一页</span>
+      </a>
+    <a class="next" href="/page/3/">
+        <span class="next-text">下一页</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+  </nav>
         </div>
         
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>| </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
-    </div>
-</footer>
-    </div>
-    
-<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            var iPad = window.navigator.userAgent.indexOf('iPad');
-            if (iPad > -1 || $(".left-col").css("display") === "none") {
-                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
-                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
-                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
-            }
-            else {
-                var backgroundnum = 5;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-            }
-        })
-    </script>
+      </div>
+    </main>
 
-
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:akillcool@.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/akillcool" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/akillcool" class="iconfont icon-github" title="github"></a>
+  <a href="https://akillcool.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
-<script>
-    // Open in New Window
-    
-        var oOpenInNew = {
-            
-            
-            
-            
-            
-            
-             archives: ".archive-article-title", 
-             miniArchives: "a.post-list-link", 
-            
-             friends: "#js-friends a", 
-             socail: ".social a" 
-        }
-        for (var x in oOpenInNew) {
-            $(oOpenInNew[x]).attr("target", "_blank");
-        }
-    
-</script>
 
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2013 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Koi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
   </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-40133248-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
 </body>
 </html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSharp on Koi</title>
+    <link>https://akillcool.github.io/tags/csharp/</link>
+    <description>Recent content in CSharp on Koi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Koi</copyright>
+    <lastBuildDate>Sat, 18 Feb 2017 14:09:01 +0000</lastBuildDate>
+    
+	<atom:link href="https://akillcool.github.io/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C#读取Xml文件</title>
+      <link>https://akillcool.github.io/post/xml_file_reading_in_csharp/</link>
+      <pubDate>Sat, 18 Feb 2017 14:09:01 +0000</pubDate>
+      
+      <guid>https://akillcool.github.io/post/xml_file_reading_in_csharp/</guid>
+      <description>&lt;p&gt;描述：读取xml文件中的信息，将其输出。&lt;/p&gt;
+&lt;p&gt;主要使用了XmlDocument 类，具体可在&lt;a href=&#34;https://msdn.microsoft.com/zh-cn/library/system.xml.xmldocument.aspx&#34;&gt;MSDN&lt;/a&gt;上查阅。&lt;/p&gt;
+&lt;p&gt;注意在读取文件时用Load()方法而不是LoadXml()，否则可能会出现类似于错误如下：&lt;/p&gt;
+&lt;p&gt;“读取XML 错误：根级别上的数据无效。 第 1 行，位置 1”&lt;/p&gt;
+&lt;p&gt;要读取的xml文件：test.xml&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
