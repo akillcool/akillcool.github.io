@@ -32,6 +32,15 @@
     </item>
     
     <item>
+      <title>VirtualBox Headless Server相关配置</title>
+      <link>https://akillcool.github.io/post/vbox-headless-settings/</link>
+      <pubDate>Tue, 12 Nov 2019 12:19:55 +0800</pubDate>
+      
+      <guid>https://akillcool.github.io/post/vbox-headless-settings/</guid>
+      <description>&lt;p&gt;本文介绍了使用VirtualBox的Headless Server的一些额外配置，包含extpack、SELinux、Windows VM的远程桌面密码配置等。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>静夜思</title>
       <link>https://akillcool.github.io/post/thought-in-this-very-night/</link>
       <pubDate>Fri, 15 Mar 2019 00:17:04 +0000</pubDate>
