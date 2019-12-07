@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="Koi" /><meta name="description" content="用dd做了一个Archlinux的启动盘，发现官方镜像很贴心的给分了两个分区，一个放镜像数据，一个负责EFI启动：
-设备 启动 起点 末尾 扇区 大小 Id 类型 /dev/sdb1 * 0 1284095 1284096 627M 0 空 /dev/sdb2 164 131235 131072 64M ef EFI (FAT-12/16/32) 于是自己把剩下的空间通过fdisk新建了一个分区，然后格式化为了NTFS（平时优盘也会插到Windows机器上，担心其它格式不好识别，不使用FAT32，因为有4G的文件大小限制）
+设备 启动 起点 末尾 扇区 大小 Id 类型 /dev/sdb1 * 0 1284095 1284096 627M 0 空 /dev/sdb2 164 131235 131072 64M ef EFI (FAT-12/16/32) 于是自己把剩下的空间通过fdisk新建了一个分区，然后格式化为了NTFS（平时优盘也会插到Windows机器上，担心其它格式不好识别。不格式化为FAT32，因为有4G的文件大小限制）
 1  sudo mkfs.ntfs -f /dev/sdb3   " /><meta name="keywords" content="Koi" />
 
 
@@ -45,7 +45,7 @@
 设备       启动    起点     末尾     扇区  大小 Id 类型
 /dev/sdb1  *          0  1284095  1284096  627M  0 空
 /dev/sdb2           164   131235   131072   64M ef EFI (FAT-12/16/32)
-于是自己把剩下的空间通过fdisk新建了一个分区，然后格式化为了NTFS（平时优盘也会插到Windows机器上，担心其它格式不好识别，不使用FAT32，因为有4G的文件大小限制）
+于是自己把剩下的空间通过fdisk新建了一个分区，然后格式化为了NTFS（平时优盘也会插到Windows机器上，担心其它格式不好识别。不格式化为FAT32，因为有4G的文件大小限制）
 
 
 1
@@ -64,7 +64,7 @@ sudo mkfs.ntfs -f /dev/sdb3
 设备       启动    起点     末尾     扇区  大小 Id 类型
 /dev/sdb1  *          0  1284095  1284096  627M  0 空
 /dev/sdb2           164   131235   131072   64M ef EFI (FAT-12/16/32)
-于是自己把剩下的空间通过fdisk新建了一个分区，然后格式化为了NTFS（平时优盘也会插到Windows机器上，担心其它格式不好识别，不使用FAT32，因为有4G的文件大小限制）
+于是自己把剩下的空间通过fdisk新建了一个分区，然后格式化为了NTFS（平时优盘也会插到Windows机器上，担心其它格式不好识别。不格式化为FAT32，因为有4G的文件大小限制）
 
 
 1
@@ -76,7 +76,7 @@ sudo mkfs.ntfs -f /dev/sdb3
 ">
 <meta itemprop="datePublished" content="2019-12-07T15:17:06&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-07T15:17:06&#43;08:00" />
-<meta itemprop="wordCount" content="545">
+<meta itemprop="wordCount" content="549">
 
 
 
@@ -86,7 +86,7 @@ sudo mkfs.ntfs -f /dev/sdb3
 设备       启动    起点     末尾     扇区  大小 Id 类型
 /dev/sdb1  *          0  1284095  1284096  627M  0 空
 /dev/sdb2           164   131235   131072   64M ef EFI (FAT-12/16/32)
-于是自己把剩下的空间通过fdisk新建了一个分区，然后格式化为了NTFS（平时优盘也会插到Windows机器上，担心其它格式不好识别，不使用FAT32，因为有4G的文件大小限制）
+于是自己把剩下的空间通过fdisk新建了一个分区，然后格式化为了NTFS（平时优盘也会插到Windows机器上，担心其它格式不好识别。不格式化为FAT32，因为有4G的文件大小限制）
 
 
 1
@@ -170,7 +170,7 @@ sudo mkfs.ntfs -f /dev/sdb3
             <a href="/categories/tech/"> tech </a>
             <a href="/categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 约 545 字 </span>
+          <span class="more-meta"> 约 549 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
@@ -182,7 +182,7 @@ sudo mkfs.ntfs -f /dev/sdb3
 <pre><code>设备       启动    起点     末尾     扇区  大小 Id 类型
 /dev/sdb1  *          0  1284095  1284096  627M  0 空
 /dev/sdb2           164   131235   131072   64M ef EFI (FAT-12/16/32)
-</code></pre><p>于是自己把剩下的空间通过<code>fdisk</code>新建了一个分区，然后格式化为了NTFS（平时优盘也会插到Windows机器上，担心其它格式不好识别，不使用FAT32，因为有4G的文件大小限制）</p>
+</code></pre><p>于是自己把剩下的空间通过<code>fdisk</code>新建了一个分区，然后格式化为了NTFS（平时优盘也会插到Windows机器上，担心其它格式不好识别。不格式化为FAT32，因为有4G的文件大小限制）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -222,8 +222,13 @@ The volume may be already mounted, or another software may use it which
 could be identified for example by the help of the 'fuser' command.
 You can use force option to avoid this check, but this is not recommended
 and may lead to data corruption.
-</code></pre><p>修改完成后如下图所示：
-<img src="/static/img/2019-12-07_16-22.png" alt="USB drive mounts"></p>
+</code></pre><p>修改完成后效果如下：
+<figure>
+    <img src="/img/2019-12-07_16-22.png"/> <figcaption>
+            <h4>USB drive mounts</h4>
+        </figcaption>
+</figure>
+</p>
     </div>
 
     <div class="post-copyright">
@@ -269,7 +274,7 @@ and may lead to data corruption.
         id: '2019-12-07 15:17:06 \x2b0800 CST',
         title: '修改NTFS类型的优盘名称',
         link: decodeURI(location.href),
-        desc: '\x3cp\x3e用\x3ccode\x3edd\x3c\/code\x3e做了一个Archlinux的启动盘，发现官方镜像很贴心的给分了两个分区，一个放镜像数据，一个负责EFI启动：\x3c\/p\x3e\n\x3cpre\x3e\x3ccode\x3e设备       启动    起点     末尾     扇区  大小 Id 类型\n\/dev\/sdb1  *          0  1284095  1284096  627M  0 空\n\/dev\/sdb2           164   131235   131072   64M ef EFI (FAT-12\/16\/32)\n\x3c\/code\x3e\x3c\/pre\x3e\x3cp\x3e于是自己把剩下的空间通过\x3ccode\x3efdisk\x3c\/code\x3e新建了一个分区，然后格式化为了NTFS（平时优盘也会插到Windows机器上，担心其它格式不好识别，不使用FAT32，因为有4G的文件大小限制）\x3c\/p\x3e\n\x3cdiv class=\x22highlight\x22\x3e\x3cdiv class=\x22chroma\x22\x3e\n\x3ctable class=\x22lntable\x22\x3e\x3ctr\x3e\x3ctd class=\x22lntd\x22\x3e\n\x3cpre class=\x22chroma\x22\x3e\x3ccode\x3e\x3cspan class=\x22lnt\x22\x3e1\n\x3c\/span\x3e\x3c\/code\x3e\x3c\/pre\x3e\x3c\/td\x3e\n\x3ctd class=\x22lntd\x22\x3e\n\x3cpre class=\x22chroma\x22\x3e\x3ccode class=\x22language-bash\x22 data-lang=\x22bash\x22\x3esudo mkfs.ntfs -f \/dev\/sdb3\n\x3c\/code\x3e\x3c\/pre\x3e\x3c\/td\x3e\x3c\/tr\x3e\x3c\/table\x3e\n\x3c\/div\x3e\n\x3c\/div\x3e',
+        desc: '\x3cp\x3e用\x3ccode\x3edd\x3c\/code\x3e做了一个Archlinux的启动盘，发现官方镜像很贴心的给分了两个分区，一个放镜像数据，一个负责EFI启动：\x3c\/p\x3e\n\x3cpre\x3e\x3ccode\x3e设备       启动    起点     末尾     扇区  大小 Id 类型\n\/dev\/sdb1  *          0  1284095  1284096  627M  0 空\n\/dev\/sdb2           164   131235   131072   64M ef EFI (FAT-12\/16\/32)\n\x3c\/code\x3e\x3c\/pre\x3e\x3cp\x3e于是自己把剩下的空间通过\x3ccode\x3efdisk\x3c\/code\x3e新建了一个分区，然后格式化为了NTFS（平时优盘也会插到Windows机器上，担心其它格式不好识别。不格式化为FAT32，因为有4G的文件大小限制）\x3c\/p\x3e\n\x3cdiv class=\x22highlight\x22\x3e\x3cdiv class=\x22chroma\x22\x3e\n\x3ctable class=\x22lntable\x22\x3e\x3ctr\x3e\x3ctd class=\x22lntd\x22\x3e\n\x3cpre class=\x22chroma\x22\x3e\x3ccode\x3e\x3cspan class=\x22lnt\x22\x3e1\n\x3c\/span\x3e\x3c\/code\x3e\x3c\/pre\x3e\x3c\/td\x3e\n\x3ctd class=\x22lntd\x22\x3e\n\x3cpre class=\x22chroma\x22\x3e\x3ccode class=\x22language-bash\x22 data-lang=\x22bash\x22\x3esudo mkfs.ntfs -f \/dev\/sdb3\n\x3c\/code\x3e\x3c\/pre\x3e\x3c\/td\x3e\x3c\/tr\x3e\x3c\/table\x3e\n\x3c\/div\x3e\n\x3c\/div\x3e',
         owner: 'akillcool',
         repo: 'akillcool.github.io',
         oauth: {
