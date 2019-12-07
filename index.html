@@ -44,7 +44,7 @@
 <meta property="og:description" content="Koi&#39;s site." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://akillcool.github.io/" />
-<meta property="og:updated_time" content="2019-12-05T22:53:30+08:00" />
+<meta property="og:updated_time" content="2019-12-07T15:17:06+08:00" />
 <meta itemprop="name" content="Koi">
 <meta itemprop="description" content="Koi&#39;s site."><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Koi"/>
@@ -113,6 +113,43 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/rename-ntfs-usb-drive/">修改NTFS类型的优盘名称</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-12-07 15:17 </span>
+      <div class="post-category">
+          <a href="/categories/tech/"> tech </a>
+          <a href="/categories/linux/"> linux </a>
+          </div>
+        <span class="more-meta"> 约 545 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>用<code>dd</code>做了一个Archlinux的启动盘，发现官方镜像很贴心的给分了两个分区，一个放镜像数据，一个负责EFI启动：</p>
+<pre><code>设备       启动    起点     末尾     扇区  大小 Id 类型
+/dev/sdb1  *          0  1284095  1284096  627M  0 空
+/dev/sdb2           164   131235   131072   64M ef EFI (FAT-12/16/32)
+</code></pre><p>于是自己把剩下的空间通过<code>fdisk</code>新建了一个分区，然后格式化为了NTFS（平时优盘也会插到Windows机器上，担心其它格式不好识别，不使用FAT32，因为有4G的文件大小限制）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo mkfs.ntfs -f /dev/sdb3
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+    <div class="read-more">
+      <a href="/post/rename-ntfs-usb-drive/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/migrate-from-hexo-to-hugo/">Hexo =&gt; Hugo</a></h1>
@@ -323,30 +360,6 @@
     </div>
     <div class="read-more">
       <a href="/post/using_dbcp_setup/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/jdbc-database-sample/">通过JDBC连接MySQL</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-10-02 23:31 </span>
-      <div class="post-category">
-          <a href="/categories/tech/"> tech </a>
-          <a href="/categories/java/"> java </a>
-          </div>
-        <span class="more-meta"> 约 410 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Talk is cheap, just show the code. {% codeblock lang:java %} import java.sql.*; public class MySQLTest { public static void main(String[] args) throws Exception { // 驱动程序名 String driver = &quot;com.mysql.jdbc.Driver&quot;; // URL指向要访问的数据库名abc，useSSL=false使控制台不
-    </div>
-    <div class="read-more">
-      <a href="/post/jdbc-database-sample/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

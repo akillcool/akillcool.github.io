@@ -7,26 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Koi</copyright>
-    <lastBuildDate>Thu, 05 Dec 2019 22:53:30 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 07 Dec 2019 15:17:06 +0800</lastBuildDate>
     
 	<atom:link href="https://akillcool.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>tech</title>
-      <link>https://akillcool.github.io/categories/tech/</link>
-      <pubDate>Thu, 05 Dec 2019 22:53:30 +0800</pubDate>
+      <title>linux</title>
+      <link>https://akillcool.github.io/categories/linux/</link>
+      <pubDate>Sat, 07 Dec 2019 15:17:06 +0800</pubDate>
       
-      <guid>https://akillcool.github.io/categories/tech/</guid>
+      <guid>https://akillcool.github.io/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>linux</title>
-      <link>https://akillcool.github.io/categories/linux/</link>
-      <pubDate>Wed, 04 Dec 2019 19:25:03 +0000</pubDate>
+      <title>tech</title>
+      <link>https://akillcool.github.io/categories/tech/</link>
+      <pubDate>Sat, 07 Dec 2019 15:17:06 +0800</pubDate>
       
-      <guid>https://akillcool.github.io/categories/linux/</guid>
+      <guid>https://akillcool.github.io/categories/tech/</guid>
       <description></description>
     </item>
     

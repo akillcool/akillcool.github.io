@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>linux on Koi</title>
-    <link>https://akillcool.github.io/categories/linux/</link>
-    <description>Recent content in linux on Koi</description>
+    <title>rename on Koi</title>
+    <link>https://akillcool.github.io/tags/rename/</link>
+    <description>Recent content in rename on Koi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Koi</copyright>
     <lastBuildDate>Sat, 07 Dec 2019 15:17:06 +0800</lastBuildDate>
     
-	<atom:link href="https://akillcool.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://akillcool.github.io/tags/rename/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -32,26 +32,6 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>ArchLinux开启Hibernate休眠</title>
-      <link>https://akillcool.github.io/post/archlinux-hibernate-sleep/</link>
-      <pubDate>Wed, 04 Dec 2019 19:25:03 +0000</pubDate>
-      
-      <guid>https://akillcool.github.io/post/archlinux-hibernate-sleep/</guid>
-      <description>通过swap分区进行休眠，首先通过blkid命令找到swap分区对应的uuid 然后通过grub修改内核启动参数 vim /etc/default/grub 修改GRUB_CMDLIN</description>
-    </item>
-    
-    <item>
-      <title>双网卡双ISP基于源地址的路由配置</title>
-      <link>https://akillcool.github.io/post/routing-double-network/</link>
-      <pubDate>Wed, 31 Oct 2018 10:48:14 +0800</pubDate>
-      
-      <guid>https://akillcool.github.io/post/routing-double-network/</guid>
-      <description>&lt;p&gt;实验室集群新拉了电信宽带，还有公网IP，带宽虽然很小，平常不用来传文件的话，只是ssh倒是足够了。&lt;/p&gt;
-&lt;p&gt;但是集群内肯定是不能直接用电信宽带了，还是应该默认用教育网来访问网络。&lt;/p&gt;
-&lt;p&gt;于是就有了下面对双网卡和路由的配置。&lt;/p&gt;</description>
     </item>
     
   </channel>
