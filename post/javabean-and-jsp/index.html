@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1 with theme even" />
+<meta name="generator" content="Hugo 0.61.0 with theme even" />
 
 
 <link rel="canonical" href="https://akillcool.github.io/post/javabean-and-jsp/" />
@@ -34,7 +34,7 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 
-<link href="/dist/even.dfa23fec.min.css" rel="stylesheet">
+<link href="/dist/even.44263c39.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -48,7 +48,7 @@
 <meta itemprop="description" content="使用JavaBean规范，编写Guestbook类和MySQLUtil类，在MessageArchiever.jsp中使用getter和se">
 <meta itemprop="datePublished" content="2017-10-13T21:55:27&#43;00:00" />
 <meta itemprop="dateModified" content="2017-10-13T21:55:27&#43;00:00" />
-<meta itemprop="wordCount" content="556">
+<meta itemprop="wordCount" content="587">
 
 
 
@@ -129,7 +129,7 @@
             <a href="/categories/tech/"> tech </a>
             <a href="/categories/java/"> java </a>
             </div>
-          <span class="more-meta"> 约 556 字 </span>
+          <span class="more-meta"> 约 587 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
@@ -397,38 +397,75 @@
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="messagearchieverjsp">MessageArchiever.jsp</h2>
-<pre><code class="language-jsp" data-lang="jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=utf-8&quot;
-	pageEncoding=&quot;utf-8&quot;%&gt;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;%@ page language=&#34;java&#34; contentType=&#34;text/html; charset=utf-8&#34;
+	pageEncoding=&#34;utf-8&#34;%&gt;
 &lt;%@ page
-	import=&quot;java.text.SimpleDateFormat,koi.StringUtil&quot;%&gt;
-&lt;%@ include file=&quot;/header.jsp&quot;%&gt;
-&lt;jsp:useBean id=&quot;guestbook&quot; class=&quot;koi.Guestbook&quot;&gt;&lt;/jsp:useBean&gt;
-&lt;jsp:useBean id=&quot;mysqlutil&quot; class=&quot;koi.MySQLUtil&quot;&gt;&lt;/jsp:useBean&gt;
-&lt;jsp:setProperty property=&quot;*&quot; name=&quot;guestbook&quot;/&gt;
+	import=&#34;java.text.SimpleDateFormat,koi.StringUtil&#34;%&gt;
+&lt;%@ include file=&#34;/header.jsp&#34;%&gt;
+&lt;jsp:useBean id=&#34;guestbook&#34; class=&#34;koi.Guestbook&#34;&gt;&lt;/jsp:useBean&gt;
+&lt;jsp:useBean id=&#34;mysqlutil&#34; class=&#34;koi.MySQLUtil&#34;&gt;&lt;/jsp:useBean&gt;
+&lt;jsp:setProperty property=&#34;*&#34; name=&#34;guestbook&#34;/&gt;
 &lt;%
 	int result = 0;
 
 	// 设置编码
-	request.setCharacterEncoding(&quot;utf-8&quot;);
+	request.setCharacterEncoding(&#34;utf-8&#34;);
 	// 要执行的SQL语句
-	String sql = &quot;insert into book(name,email,phone,title,content,publishtime) values(?,?,?,?,?,?)&quot;;
+	String sql = &#34;insert into book(name,email,phone,title,content,publishtime) values(?,?,?,?,?,?)&#34;;
 
 	String name = guestbook.getName();
 	String email = guestbook.getEmail();
 	String phone = guestbook.getPhone();
 	String topic = guestbook.getTopic();
 	String content = guestbook.getContent();
-	SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd hh:mm:ss&quot;);
+	SimpleDateFormat sdf = new SimpleDateFormat(&#34;yyyy-MM-dd hh:mm:ss&#34;);
 
 	Object[] param = { name, email, phone, topic, content, sdf.format(new java.util.Date()) };
 
-	mysqlutil.setDataSourceName(&quot;java:/comp/env/jdbc/mysql&quot;);
+	mysqlutil.setDataSourceName(&#34;java:/comp/env/jdbc/mysql&#34;);
 	mysqlutil.init();		
 	result = mysqlutil.update(sql, param);
 	response.getWriter().append(Integer.toString(result));
 %&gt;
-&lt;%@ include file=&quot;/footer.jsp&quot;%&gt;
-</code></pre>
+&lt;%@ include file=&#34;/footer.jsp&#34;%&gt;
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">

@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1 with theme even" />
+<meta name="generator" content="Hugo 0.61.0 with theme even" />
 
 
 <link rel="canonical" href="https://akillcool.github.io/post/migrate-from-hexo-to-hugo/" />
@@ -34,7 +34,7 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 
-<link href="/dist/even.dfa23fec.min.css" rel="stylesheet">
+<link href="/dist/even.44263c39.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -207,13 +207,13 @@ rm -rf ./public/*
 <p>这里按照官方文档的建议写了一个部署脚本，每次发布的时候执行一次脚本就行了
 <script type="application/javascript" src="https://gist.github.com/akillcool/5387ed855c7cfe9c1b1878441d6c4962.js"></script>
 </p>
-<h1 id="heading1">踩坑</h1>
+<h1 id="heading-1">踩坑</h1>
 <p>使用git submodule的话，就别打开<code>enableGitInfo</code>选项了，它会错误地把父项目的git Hash给展示到文章中。看到Hugo项目有人提了个PR解决这个问题，但是到现在都还没有被merge：</p>
 <ul>
-<li>PR：<a href="https://github.com/gohugoio/hugo/pull/5535"><a href="https://github.com/gohugoio/hugo/pull/5535">https://github.com/gohugoio/hugo/pull/5535</a></a></li>
-<li>Issue：<a href="https://github.com/gohugoio/hugo/issues/5533"><a href="https://github.com/gohugoio/hugo/issues/5533">https://github.com/gohugoio/hugo/issues/5533</a></a></li>
+<li>PR：<a href="https://github.com/gohugoio/hugo/pull/5535">https://github.com/gohugoio/hugo/pull/5535</a></li>
+<li>Issue：<a href="https://github.com/gohugoio/hugo/issues/5533">https://github.com/gohugoio/hugo/issues/5533</a></li>
 </ul>
-<h1 id="heading2">总结</h1>
+<h1 id="heading-2">总结</h1>
 <p>通过git submodule来同时管理Hugo项目和Github Pages网站项目更加方便，把配置文件放到私有仓库也相对安全一点点。写完Markdown文档，执行一次部署脚本，所有东西就全部备份归档了。这种便利性，也让人更能燃起写blog的欲望。</p>
 <p>最后安利一下，Hugo的<a href="https://gohugo.io/content-management/shortcodes">Shortcodes</a>很好用，上面的gist就是用Shortcodes插入的。</p>
     </div>

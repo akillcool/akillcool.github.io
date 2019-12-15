@@ -27,7 +27,7 @@
       <pubDate>Mon, 15 Aug 2016 02:08:26 +0000</pubDate>
       
       <guid>https://akillcool.github.io/post/recursion-full-array/</guid>
-      <description>Description 设str是含有n个不同字符的数组，perm(str,k-1,n)为str[0]`~str[k-1]的所有字符的全排列。很明显，perm(s</description>
+      <description>Description 设str是含有n个不同字符的数组，perm(str,k-1,n)为str[0]~str[k-1]的所有字符的全排列。很明显，perm(st</description>
     </item>
     
   </channel>

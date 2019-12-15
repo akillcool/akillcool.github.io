@@ -16,14 +16,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Koi" /><meta name="description" content="Description 设str是含有n个不同字符的数组，perm(str,k-1,n)为str[0]`~str[k-1]的所有字符的全排列。很明显，perm(s" /><meta name="keywords" content="Koi" />
+<meta name="author" content="Koi" /><meta name="description" content="Description 设str是含有n个不同字符的数组，perm(str,k-1,n)为str[0]~str[k-1]的所有字符的全排列。很明显，perm(st" /><meta name="keywords" content="Koi" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.60.1 with theme even" />
+<meta name="generator" content="Hugo 0.61.0 with theme even" />
 
 
 <link rel="canonical" href="https://akillcool.github.io/post/recursion-full-array/" />
@@ -34,27 +34,27 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 
-<link href="/dist/even.dfa23fec.min.css" rel="stylesheet">
+<link href="/dist/even.44263c39.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="递归实现n个不同字符的全排列" />
-<meta property="og:description" content="Description 设str是含有n个不同字符的数组，perm(str,k-1,n)为str[0]`~str[k-1]的所有字符的全排列。很明显，perm(s" />
+<meta property="og:description" content="Description 设str是含有n个不同字符的数组，perm(str,k-1,n)为str[0]~str[k-1]的所有字符的全排列。很明显，perm(st" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://akillcool.github.io/post/recursion-full-array/" />
 <meta property="article:published_time" content="2016-08-15T02:08:26+00:00" />
 <meta property="article:modified_time" content="2016-08-15T02:08:26+00:00" />
 <meta itemprop="name" content="递归实现n个不同字符的全排列">
-<meta itemprop="description" content="Description 设str是含有n个不同字符的数组，perm(str,k-1,n)为str[0]`~str[k-1]的所有字符的全排列。很明显，perm(s">
+<meta itemprop="description" content="Description 设str是含有n个不同字符的数组，perm(str,k-1,n)为str[0]~str[k-1]的所有字符的全排列。很明显，perm(st">
 <meta itemprop="datePublished" content="2016-08-15T02:08:26&#43;00:00" />
 <meta itemprop="dateModified" content="2016-08-15T02:08:26&#43;00:00" />
-<meta itemprop="wordCount" content="323">
+<meta itemprop="wordCount" content="319">
 
 
 
 <meta itemprop="keywords" content="recursion," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="递归实现n个不同字符的全排列"/>
-<meta name="twitter:description" content="Description 设str是含有n个不同字符的数组，perm(str,k-1,n)为str[0]`~str[k-1]的所有字符的全排列。很明显，perm(s"/>
+<meta name="twitter:description" content="Description 设str是含有n个不同字符的数组，perm(str,k-1,n)为str[0]~str[k-1]的所有字符的全排列。很明显，perm(st"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,7 +129,7 @@
             <a href="/categories/tech/"> tech </a>
             <a href="/categories/algorithm/"> algorithm </a>
             </div>
-          <span class="more-meta"> 约 323 字 </span>
+          <span class="more-meta"> 约 319 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -148,8 +148,8 @@
 </div>
     <div class="post-content">
       <h2 id="description">Description</h2>
-<p>设<code>str</code>是含有<code>n</code>个不同字符的数组，<code>perm(str,k-1,n)</code>为<code>str[0]`~</code>str[k-1]<code>的所有字符的全排列。很明显，</code>perm(str,k-1,n)<code>处理的字符个数比</code>perm(str,k,n)`处理的字符个数少一个。</p>
-<p>假定<code>perm(str,k-1,n)</code>可求，<code>str[k]</code>位置可以任取<code>str[0]`~</code>str[k]<code>的任何值，再组合</code>perm(str,k-1,n)<code>得到</code>perm(str,k,n)`。</p>
+<p>设<code>str</code>是含有<code>n</code>个不同字符的数组，<code>perm(str,k-1,n)</code>为<code>str[0]</code>~<code>str[k-1]</code>的所有字符的全排列。很明显，<code>perm(str,k-1,n)</code>处理的字符个数比<code>perm(str,k,n)</code>处理的字符个数少一个。</p>
+<p>假定<code>perm(str,k-1,n)</code>可求，<code>str[k]</code>位置可以任取<code>str[0]</code>~<code>str[k]</code>的任何值，再组合<code>perm(str,k-1,n)</code>得到<code>perm(str,k,n)</code>。</p>
 <!-- raw HTML omitted -->
 <h2 id="algorithm">Algorithm</h2>
 <p>{% codeblock lang:c %}
@@ -234,7 +234,7 @@ int main(void)
         id: '2016-08-15 02:08:26 \x2b0000 UTC',
         title: '递归实现n个不同字符的全排列',
         link: decodeURI(location.href),
-        desc: 'Description 设str是含有n个不同字符的数组，perm(str,k-1,n)为str[0]`~str[k-1]的所有字符的全排列。很明显，perm(s',
+        desc: 'Description 设str是含有n个不同字符的数组，perm(str,k-1,n)为str[0]~str[k-1]的所有字符的全排列。很明显，perm(st',
         owner: 'akillcool',
         repo: 'akillcool.github.io',
         oauth: {

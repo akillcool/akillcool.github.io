@@ -18,7 +18,7 @@
       <pubDate>Wed, 04 Dec 2019 19:25:03 +0000</pubDate>
       
       <guid>https://akillcool.github.io/post/archlinux-hibernate-sleep/</guid>
-      <description>通过swap分区进行休眠，首先通过blkid命令找到swap分区对应的uuid 然后通过grub修改内核启动参数 vim /etc/default/grub 修改GRUB_CMDLIN</description>
+      <description>通过swap分区进行休眠，首先通过blkid命令找到swap分区对应的uuid 然后通过grub修改内核启动参数 1 vim /etc/default/grub 修改GRUB_CMDLI</description>
     </item>
     
   </channel>
