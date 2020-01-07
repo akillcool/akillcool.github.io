@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kwallet on Koi</title>
+    <link>https://akillcool.github.io/tags/kwallet/</link>
+    <description>Recent content in kwallet on Koi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Koi</copyright>
+    <lastBuildDate>Tue, 07 Jan 2020 16:29:03 +0800</lastBuildDate>
+    
+	<atom:link href="https://akillcool.github.io/tags/kwallet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>通过Kwallet保存Chrome密码</title>
+      <link>https://akillcool.github.io/post/use-kwallet-save-chrome-password/</link>
+      <pubDate>Tue, 07 Jan 2020 16:29:03 +0800</pubDate>
+      
+      <guid>https://akillcool.github.io/post/use-kwallet-save-chrome-password/</guid>
+      <description>&lt;p&gt;很久很久之前，刚刚装上&lt;a href=&#34;https://kde.org/plasma-desktop&#34;&gt;KDE Plasma&lt;/a&gt;的时候，觉得Kwallet难用，而且总是弹出来，就直接给关掉了。于是乎，Chrome的密码就一直没能保存上，也没有自动填充，今天终于忍无可忍，行动起来把它配置好了，也稍微踩了一点坑，不过配置好之后发现其实也就两步而已，非常简单。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

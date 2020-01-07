@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>通过Kwallet保存Chrome密码 - Koi</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Koi" /><meta name="description" content="很久很久之前，刚刚装上KDE Plasma的时候，觉得Kwallet难用，而且总是弹出来，就直接给关掉了。于是乎，Chrome的密码就一直没能保存上，也没有自动填充，今天终于忍无可忍，行动起来把它配置好了，也稍微踩了一点坑，不过配置好之后发现其实也就两步而已，非常简单。
+" /><meta name="keywords" content="Koi" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.62.0 with theme even" />
+
+
+<link rel="canonical" href="https://akillcool.github.io/post/use-kwallet-save-chrome-password/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.44263c39.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="通过Kwallet保存Chrome密码" />
+<meta property="og:description" content="很久很久之前，刚刚装上KDE Plasma的时候，觉得Kwallet难用，而且总是弹出来，就直接给关掉了。于是乎，Chrome的密码就一直没能保存上，也没有自动填充，今天终于忍无可忍，行动起来把它配置好了，也稍微踩了一点坑，不过配置好之后发现其实也就两步而已，非常简单。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://akillcool.github.io/post/use-kwallet-save-chrome-password/" />
+<meta property="article:published_time" content="2020-01-07T16:29:03+08:00" />
+<meta property="article:modified_time" content="2020-01-07T16:29:03+08:00" />
+<meta itemprop="name" content="通过Kwallet保存Chrome密码">
+<meta itemprop="description" content="很久很久之前，刚刚装上KDE Plasma的时候，觉得Kwallet难用，而且总是弹出来，就直接给关掉了。于是乎，Chrome的密码就一直没能保存上，也没有自动填充，今天终于忍无可忍，行动起来把它配置好了，也稍微踩了一点坑，不过配置好之后发现其实也就两步而已，非常简单。">
+<meta itemprop="datePublished" content="2020-01-07T16:29:03&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-07T16:29:03&#43;08:00" />
+<meta itemprop="wordCount" content="658">
+
+
+
+<meta itemprop="keywords" content="kwallet,chrome,archlinux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="通过Kwallet保存Chrome密码"/>
+<meta name="twitter:description" content="很久很久之前，刚刚装上KDE Plasma的时候，觉得Kwallet难用，而且总是弹出来，就直接给关掉了。于是乎，Chrome的密码就一直没能保存上，也没有自动填充，今天终于忍无可忍，行动起来把它配置好了，也稍微踩了一点坑，不过配置好之后发现其实也就两步而已，非常简单。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Koi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Koi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">通过Kwallet保存Chrome密码</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-01-07 16:29 </span>
+        <div class="post-category">
+            <a href="/categories/tech/"> tech </a>
+            <a href="/categories/linux/"> linux </a>
+            </div>
+          <span class="more-meta"> 约 658 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      <p>很久很久之前，刚刚装上<a href="https://kde.org/plasma-desktop">KDE Plasma</a>的时候，觉得Kwallet难用，而且总是弹出来，就直接给关掉了。于是乎，Chrome的密码就一直没能保存上，也没有自动填充，今天终于忍无可忍，行动起来把它配置好了，也稍微踩了一点坑，不过配置好之后发现其实也就两步而已，非常简单。</p>
+<h2 id="heading">步骤</h2>
+<h3 id="1-kwallet">1. 启用<code>Kwallet</code></h3>
+<p>这个通过KDE自带的配置就行。
+<figure>
+    <img src="/img/2020-01-07_16-38.png"/> <figcaption>
+            <h4>Kwallet配置</h4>
+        </figcaption>
+</figure>
+</p>
+<h3 id="2-chrome">2. 配置Chrome的启动参数</h3>
+<p>编辑用户的Chrome启动参数配置，根据操作系统的不同，路径也不一样，以Linux的配置文件<code>~/.config/chrome-flags.conf</code>为例。
+在配置文件中添加以下启动参数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">--password-store=kwallet5
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="heading-1">踩坑</h2>
+<h3 id="1-">1. 启动参数写错</h3>
+<p>Chrome的man page中是这样的：</p>
+<blockquote>
+<p>&ndash;password-store=&lt;basic|gnome|kwallet&gt;</p>
+<p>Set the password store to use.  The default is to automatically detect based on the desktop environment.  basic  selects the built in, unencrypted password store.  gnome selects Gnome keyring.  kwallet selects (KDE) KWallet.  (Note that KWallet may not work reliably outside KDE.)</p>
+</blockquote>
+<p><code>kwallet</code>默认对应KDE4，如果要使用KDE5的话需要修改为<code>kwallet5</code>，man page一直没有更新。</p>
+<h3 id="2-">2. 配置好之后无法同步密码</h3>
+<p>错误如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[ERROR:password_syncable_service.cc(193)] Passwords datatype error was encountered: Failed to get passwords from store.
+</code></pre></td></tr></table>
+</div>
+</div><p>解决办法是删掉原有的密码数据，参考<a href="http://plasmasturm.org/log/chromepwstore/">Fixing a Google Chrome failure to save passwords</a>。</p>
+<ol>
+<li>退出Chrome</li>
+<li>打开对应的Chrome用户数据目录，不同平台对应路径的不一样</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>操作系统</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mac</td>
+<td>~/Library/Application Support/Google/Chrome</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>~/.config/google-chrome</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>%UserProfile%\AppData\Local\Google\Chrome\User Data</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li>在上一步的路径下，主用户的配置文件存放在<code>Default</code>，其他用户会以<code>Profile 1</code>或<code>Profile 2</code>命名，可以修改多个用户的配置，一般只需要修改<code>Default</code>。</li>
+<li>删除掉<code>Login Data</code>和<code>Login Data-journal</code>两个目录。</li>
+<li>重复上述步骤，对其他用户进行操作。</li>
+</ol>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Koi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-01-07 16:29
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/kwallet/">kwallet</a>
+          <a href="/tags/chrome/">chrome</a>
+          <a href="/tags/archlinux/">archlinux</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/rename-ntfs-usb-drive/">
+            <span class="next-text nav-default">修改NTFS类型的优盘名称</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2020-01-07 16:29:03 \x2b0800 CST',
+        title: '通过Kwallet保存Chrome密码',
+        link: decodeURI(location.href),
+        desc: '\x3cp\x3e很久很久之前，刚刚装上\x3ca href=\x22https:\/\/kde.org\/plasma-desktop\x22\x3eKDE Plasma\x3c\/a\x3e的时候，觉得Kwallet难用，而且总是弹出来，就直接给关掉了。于是乎，Chrome的密码就一直没能保存上，也没有自动填充，今天终于忍无可忍，行动起来把它配置好了，也稍微踩了一点坑，不过配置好之后发现其实也就两步而已，非常简单。\x3c\/p\x3e',
+        owner: 'akillcool',
+        repo: 'akillcool.github.io',
+        oauth: {
+          client_id: '43d5c3ff754607d378a9',
+          client_secret: 'b237b456c2285fad07bf92a5ef58e1f90acd2878'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:akillcool@live.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/akillcool" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/akillcool" class="iconfont icon-github" title="github"></a>
+  <a href="https://akillcool.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Koi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-40133248-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>
