@@ -26,7 +26,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.62.0 with theme even" />
+<meta name="generator" content="Hugo 0.64.1 with theme even" />
 
 
 <link rel="canonical" href="https://akillcool.github.io/post/routing-double-network/" />
@@ -149,15 +149,15 @@
       <p>实验室集群新拉了电信宽带，还有公网IP，带宽虽然很小，平常不用来传文件的话，只是ssh倒是足够了。</p>
 <p>但是集群内肯定是不能直接用电信宽带了，还是应该默认用教育网来访问网络。</p>
 <p>于是就有了下面对双网卡和路由的配置。</p>
-<h1 id="heading">环境</h1>
+<h1 id="环境">环境</h1>
 <p>CentOS 6</p>
 <p>eth1：教育网 192.167.0.0/21 网关192.167.0.1 ip：192.167.0.9</p>
 <p>eth0：电信 192.168.0.0/21 网关192.168.2.1 ip：192.168.0.9</p>
-<h1 id="heading-1">实现功能</h1>
+<h1 id="实现功能">实现功能</h1>
 <p>从电信进入的所有数据仍从电信出口传出。</p>
 <p>从教育网进入的所有数据仍从教育网出口传出。</p>
 <p>机器默认使用教育网。</p>
-<h1 id="heading-2">实现方法</h1>
+<h1 id="实现方法">实现方法</h1>
 <ol>
 <li>额外创建两个路由表<code>chinatelecom</code>和<code>hustedu</code></li>
 </ol>

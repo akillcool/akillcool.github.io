@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.62.0 with theme even" />
+<meta name="generator" content="Hugo 0.64.1 with theme even" />
 
 
 <link rel="canonical" href="https://akillcool.github.io/post/migrate-from-hexo-to-hugo/" />
@@ -139,7 +139,7 @@
       <p>Hexo用久了，感觉静态页面生成时间太久，同时又懒得对整个项目做备份，导致常常有想写博客的想法的时候，都会因为觉得麻烦而打消。
 于是，今天尝试迁移到了Hugo，体验意外的不错。</p>
 <p>Hexo和Hugo的Markdown文档基本上都是通用的，基本上可以做到无痛迁移，同时也修改了评论插件，Disqus墙内基本上都是访问不到的，现在修改成了<a href="https://github.com/imsun/gitment">Gitment</a>，发现通过Issus的方式来进行评论也相当不错。</p>
-<h1 id="heading">迁移过程</h1>
+<h1 id="迁移过程">迁移过程</h1>
 <p>参考<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#put-it-into-a-script">Hugo官方文档</a>，通过submodule来同时管理源文档和静态页面，并保留原有hexo的commit，步骤如下：</p>
 <ol>
 <li>新建一个Hugo项目mysite，可以先进入mysite中配置Hugo主题、迁移原有hexo文档等&hellip;搞定之后别忘了用hugo server命令预览一下</li>
@@ -207,13 +207,13 @@ rm -rf ./public/*
 <p>这里按照官方文档的建议写了一个部署脚本，每次发布的时候执行一次脚本就行了
 <script type="application/javascript" src="https://gist.github.com/akillcool/5387ed855c7cfe9c1b1878441d6c4962.js"></script>
 </p>
-<h1 id="heading-1">踩坑</h1>
+<h1 id="踩坑">踩坑</h1>
 <p>使用git submodule的话，就别打开<code>enableGitInfo</code>选项了，它会错误地把父项目的git Hash给展示到文章中。看到Hugo项目有人提了个PR解决这个问题，但是到现在都还没有被merge：</p>
 <ul>
 <li>PR：<a href="https://github.com/gohugoio/hugo/pull/5535">https://github.com/gohugoio/hugo/pull/5535</a></li>
 <li>Issue：<a href="https://github.com/gohugoio/hugo/issues/5533">https://github.com/gohugoio/hugo/issues/5533</a></li>
 </ul>
-<h1 id="heading-2">总结</h1>
+<h1 id="总结">总结</h1>
 <p>通过git submodule来同时管理Hugo项目和Github Pages网站项目更加方便，把配置文件放到私有仓库也相对安全一点点。写完Markdown文档，执行一次部署脚本，所有东西就全部备份归档了。这种便利性，也让人更能燃起写blog的欲望。</p>
 <p>最后安利一下，Hugo的<a href="https://gohugo.io/content-management/shortcodes">Shortcodes</a>很好用，上面的gist就是用Shortcodes插入的。</p>
     </div>

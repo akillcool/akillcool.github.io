@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.62.0 with theme even" />
+<meta name="generator" content="Hugo 0.64.1 with theme even" />
 
 
 <link rel="canonical" href="https://akillcool.github.io/post/use-kwallet-save-chrome-password/" />
@@ -139,8 +139,8 @@
     
     <div class="post-content">
       <p>很久很久之前，刚刚装上<a href="https://kde.org/plasma-desktop">KDE Plasma</a>的时候，觉得Kwallet难用，而且总是弹出来，就直接给关掉了。于是乎，Chrome的密码就一直没能保存上，也没有自动填充，今天终于忍无可忍，行动起来把它配置好了，也稍微踩了一点坑，不过配置好之后发现其实也就两步而已，非常简单。</p>
-<h2 id="heading">步骤</h2>
-<h3 id="1-kwallet">1. 启用<code>Kwallet</code></h3>
+<h2 id="步骤">步骤</h2>
+<h3 id="1-启用kwallet">1. 启用<code>Kwallet</code></h3>
 <p>这个通过KDE自带的配置就行。
 <figure>
     <img src="/img/2020-01-07_16-38.png"/> <figcaption>
@@ -148,7 +148,7 @@
         </figcaption>
 </figure>
 </p>
-<h3 id="2-chrome">2. 配置Chrome的启动参数</h3>
+<h3 id="2-配置chrome的启动参数">2. 配置Chrome的启动参数</h3>
 <p>编辑用户的Chrome启动参数配置，根据操作系统的不同，路径也不一样，以Linux的配置文件<code>~/.config/chrome-flags.conf</code>为例。
 在配置文件中添加以下启动参数：</p>
 <div class="highlight"><div class="chroma">
@@ -159,15 +159,15 @@
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">--password-store=kwallet5
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="heading-1">踩坑</h2>
-<h3 id="1-">1. 启动参数写错</h3>
+</div><h2 id="踩坑">踩坑</h2>
+<h3 id="1-启动参数写错">1. 启动参数写错</h3>
 <p>Chrome的man page中是这样的：</p>
 <blockquote>
 <p>&ndash;password-store=&lt;basic|gnome|kwallet&gt;</p>
 <p>Set the password store to use.  The default is to automatically detect based on the desktop environment.  basic  selects the built in, unencrypted password store.  gnome selects Gnome keyring.  kwallet selects (KDE) KWallet.  (Note that KWallet may not work reliably outside KDE.)</p>
 </blockquote>
 <p><code>kwallet</code>默认对应KDE4，如果要使用KDE5的话需要修改为<code>kwallet5</code>，man page一直没有更新。</p>
-<h3 id="2-">2. 配置好之后无法同步密码</h3>
+<h3 id="2-配置好之后无法同步密码">2. 配置好之后无法同步密码</h3>
 <p>错误如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -236,7 +236,11 @@
           <a href="/tags/archlinux/">archlinux</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/clash-with-auto-update-config/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Clash自动更新订阅配置</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         <a class="next" href="/post/rename-ntfs-usb-drive/">
             <span class="next-text nav-default">修改NTFS类型的优盘名称</span>
             <span class="next-text nav-mobile">下一篇</span>

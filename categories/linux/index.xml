@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Koi</copyright>
-    <lastBuildDate>Tue, 07 Jan 2020 16:29:03 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 14 Feb 2020 14:08:39 +0800</lastBuildDate>
     
 	<atom:link href="https://akillcool.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Clash自动更新订阅配置</title>
+      <link>https://akillcool.github.io/post/clash-with-auto-update-config/</link>
+      <pubDate>Fri, 14 Feb 2020 14:08:39 +0800</pubDate>
+      
+      <guid>https://akillcool.github.io/post/clash-with-auto-update-config/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文提供了通过shell脚本自动更新Clash在线配置的解决方案。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Dreamacro/clash&#34;&gt;Clash&lt;/a&gt;是一个基于Golang开发的代理工具，支持Vmess, Shadowsocks, Snell和SOCKS5协议。Clash也有Android版本和OS X版本，配置文件通用，但是对于Linux，目前似乎还没有人开发自定订阅配置的功能，Clash的作者开发了一个Web UI叫&lt;a href=&#34;https://github.com/Dreamacro/clash-dashboard&#34;&gt;Clash Dashboard&lt;/a&gt;，可以在网页中调用相应Restful API调整相关配置，目前的版本（0.3.0）并没有配置订阅功能。&lt;/p&gt;
+&lt;p&gt;Clash本身可以根据配置文件做到负载均衡和自动切换，因此，如果你的代理服务商提供了在线配置，能够做到实时更新配置的话，将是最省心的选择。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>通过Kwallet保存Chrome密码</title>
