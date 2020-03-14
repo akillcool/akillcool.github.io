@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Docker搭建Minecraft AArch64 Server指北 - Koi</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Koi" /><meta name="description" content=" 最近用上了华为云的ECS，基于aarch64（arm64）架构，而Minecraft使用Java编写，Java在各个平台都有虚拟机，通过Docker直接运行一个Minecraft server很简单。本文所实现的则是通过docker compose将Minecraft和Blessing Skin（附带yggdrasil-api插件）的相关容器编排到一起进行运行和管理。
+ 介绍 开始之前，先分别介绍本文所涉及的几个名词。
+Minecraft：《我的世界》（英语：Minecraft，港台译作“当个创世神”）是一款沙盒游戏，最初由瑞典游戏设计师马库斯·阿列克谢·泊松（别名Notch）单独开发，随后由2009年成立的瑞典公司Mojang开发并发行。玩家可以在一个随机生成的3D世界内，以带材质贴图的立方体为基础进行游戏。游戏中的其他特色包括探索世界、采集资源、合成物品及生存冒险等。游戏有多种模式，生存模式中玩家必须维持生命并采集资源来打造自己的世界；创造模式中玩家拥有无限的资源并可飞行，大多数玩家会使用此模式来建造大型建筑；冒险模式中玩家可在其他玩家定制的地图中游玩。游戏的Java版以其强大的第三方拓展模块（mod）而知名，它们可为游戏添加各种新的对象、角色和功能。(来源：维基百科)
+" /><meta name="keywords" content="Koi" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.67.0 with theme even" />
+
+
+<link rel="canonical" href="https://akillcool.github.io/post/minecraft-docker/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.44263c39.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Docker搭建Minecraft AArch64 Server指北" />
+<meta property="og:description" content="
+最近用上了华为云的ECS，基于aarch64（arm64）架构，而Minecraft使用Java编写，Java在各个平台都有虚拟机，通过Docker直接运行一个Minecraft server很简单。本文所实现的则是通过docker compose将Minecraft和Blessing Skin（附带yggdrasil-api插件）的相关容器编排到一起进行运行和管理。
+
+介绍
+开始之前，先分别介绍本文所涉及的几个名词。
+Minecraft：《我的世界》（英语：Minecraft，港台译作“当个创世神”）是一款沙盒游戏，最初由瑞典游戏设计师马库斯·阿列克谢·泊松（别名Notch）单独开发，随后由2009年成立的瑞典公司Mojang开发并发行。玩家可以在一个随机生成的3D世界内，以带材质贴图的立方体为基础进行游戏。游戏中的其他特色包括探索世界、采集资源、合成物品及生存冒险等。游戏有多种模式，生存模式中玩家必须维持生命并采集资源来打造自己的世界；创造模式中玩家拥有无限的资源并可飞行，大多数玩家会使用此模式来建造大型建筑；冒险模式中玩家可在其他玩家定制的地图中游玩。游戏的Java版以其强大的第三方拓展模块（mod）而知名，它们可为游戏添加各种新的对象、角色和功能。(来源：维基百科)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://akillcool.github.io/post/minecraft-docker/" />
+<meta property="article:published_time" content="2020-03-15T00:11:45+08:00" />
+<meta property="article:modified_time" content="2020-03-15T00:11:45+08:00" />
+<meta itemprop="name" content="Docker搭建Minecraft AArch64 Server指北">
+<meta itemprop="description" content="
+最近用上了华为云的ECS，基于aarch64（arm64）架构，而Minecraft使用Java编写，Java在各个平台都有虚拟机，通过Docker直接运行一个Minecraft server很简单。本文所实现的则是通过docker compose将Minecraft和Blessing Skin（附带yggdrasil-api插件）的相关容器编排到一起进行运行和管理。
+
+介绍
+开始之前，先分别介绍本文所涉及的几个名词。
+Minecraft：《我的世界》（英语：Minecraft，港台译作“当个创世神”）是一款沙盒游戏，最初由瑞典游戏设计师马库斯·阿列克谢·泊松（别名Notch）单独开发，随后由2009年成立的瑞典公司Mojang开发并发行。玩家可以在一个随机生成的3D世界内，以带材质贴图的立方体为基础进行游戏。游戏中的其他特色包括探索世界、采集资源、合成物品及生存冒险等。游戏有多种模式，生存模式中玩家必须维持生命并采集资源来打造自己的世界；创造模式中玩家拥有无限的资源并可飞行，大多数玩家会使用此模式来建造大型建筑；冒险模式中玩家可在其他玩家定制的地图中游玩。游戏的Java版以其强大的第三方拓展模块（mod）而知名，它们可为游戏添加各种新的对象、角色和功能。(来源：维基百科)">
+<meta itemprop="datePublished" content="2020-03-15T00:11:45&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-15T00:11:45&#43;08:00" />
+<meta itemprop="wordCount" content="2543">
+
+
+
+<meta itemprop="keywords" content="Docker,华为云,arm64,aarch64,minecraft," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker搭建Minecraft AArch64 Server指北"/>
+<meta name="twitter:description" content="
+最近用上了华为云的ECS，基于aarch64（arm64）架构，而Minecraft使用Java编写，Java在各个平台都有虚拟机，通过Docker直接运行一个Minecraft server很简单。本文所实现的则是通过docker compose将Minecraft和Blessing Skin（附带yggdrasil-api插件）的相关容器编排到一起进行运行和管理。
+
+介绍
+开始之前，先分别介绍本文所涉及的几个名词。
+Minecraft：《我的世界》（英语：Minecraft，港台译作“当个创世神”）是一款沙盒游戏，最初由瑞典游戏设计师马库斯·阿列克谢·泊松（别名Notch）单独开发，随后由2009年成立的瑞典公司Mojang开发并发行。玩家可以在一个随机生成的3D世界内，以带材质贴图的立方体为基础进行游戏。游戏中的其他特色包括探索世界、采集资源、合成物品及生存冒险等。游戏有多种模式，生存模式中玩家必须维持生命并采集资源来打造自己的世界；创造模式中玩家拥有无限的资源并可飞行，大多数玩家会使用此模式来建造大型建筑；冒险模式中玩家可在其他玩家定制的地图中游玩。游戏的Java版以其强大的第三方拓展模块（mod）而知名，它们可为游戏添加各种新的对象、角色和功能。(来源：维基百科)"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Koi</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Koi</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Docker搭建Minecraft AArch64 Server指北</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-03-15 00:11 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> linux </a>
+            <a href="/categories/tech/"> tech </a>
+            </div>
+          <span class="more-meta"> 约 2543 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      <blockquote>
+<p>最近用上了华为云的ECS，基于aarch64（arm64）架构，而Minecraft使用Java编写，Java在各个平台都有虚拟机，通过Docker直接运行一个Minecraft server很简单。本文所实现的则是通过docker compose将Minecraft和Blessing Skin（附带yggdrasil-api插件）的相关容器编排到一起进行运行和管理。</p>
+</blockquote>
+<h2 id="介绍">介绍</h2>
+<p>开始之前，先分别介绍本文所涉及的几个名词。</p>
+<p><code>Minecraft</code>：《我的世界》（英语：Minecraft，港台译作“当个创世神”）是一款沙盒游戏，最初由瑞典游戏设计师马库斯·阿列克谢·泊松（别名Notch）单独开发，随后由2009年成立的瑞典公司Mojang开发并发行。玩家可以在一个随机生成的3D世界内，以带材质贴图的立方体为基础进行游戏。游戏中的其他特色包括探索世界、采集资源、合成物品及生存冒险等。游戏有多种模式，生存模式中玩家必须维持生命并采集资源来打造自己的世界；创造模式中玩家拥有无限的资源并可飞行，大多数玩家会使用此模式来建造大型建筑；冒险模式中玩家可在其他玩家定制的地图中游玩。游戏的Java版以其强大的第三方拓展模块（mod）而知名，它们可为游戏添加各种新的对象、角色和功能。(来源：<a href="https://zh.wikipedia.org/wiki/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C">维基百科</a>)</p>
+<p><code>Blessing Skin</code>: Blessing Skin 是一款能让用户上传、管理和分享 Minecraft 皮肤和披风的<del>皮肤站</del>Web 应用程序。与修改游戏材质包不同的是，所有人都能在游戏中看到各自的皮肤和披风（当然，前提是玩家们要使用同一个皮肤站）。Blessing Skin 是一个开源的 PHP 项目，这意味着可以自由地在你的服务器上部署它。(来源：<a href="https://github.com/bs-community/blessing-skin-server">Blessing Skin GitHub主页</a>  项目作者：<a href="https://blessing.studio/">@printempw</a>)</p>
+<p><code>authlib-injector</code>：简单来讲，就是通过运行时修改 authlib 实现游戏外登录，并为 Yggdrasil 服务端的实现提供规范。Mojang（开发Minecraft的公司）在代码中写死了登录中必须要访问他们的官方服务器，authlib-injector通过在Minecraft服务器运行时替换相关的字节码为自己的服务器地址，让用户可以访问自己的私有服务器。(来源：<a href="https://github.com/yushijinhun/authlib-injector">authlib-injector GitHub主页</a>）</p>
+<p><code>Yggdrasil API for Blessing Skin</code>：是Blessing Skin的一个插件，基本实现了 Yggdrasil API 规范，可与 authlib-injector 等 authlib hook 配合使用实现外置登录系统。（来源：<a href="https://github.com/bs-community/yggdrasil-api">Yggdrasil API for Blessing Skin GitHub主页</a>）</p>
+<h2 id="编排">编排</h2>
+<h3 id="镜像">镜像</h3>
+<p>因为服务器是aarch64架构，也要考虑Docker镜像的架构，否则在错误的架构上运行容器就会出现类似<code>exec format error</code>的提示。</p>
+<p>经过测试，编排中可以直接使用的Docker Hub aarch64架构镜像有以下几个，其中<code>itzg/minecraft-server:multiarch</code>镜像其实有很多配置项，具体配置可以参考它的<a href="https://github.com/itzg/docker-minecraft-server">项目主页</a>，本文仅以运行原生Minecraft Server为例。
+<code>mariadb:latest</code>和<code>redis:4.0</code>用于存储皮肤站的相关数据：</p>
+<ul>
+<li>itzg/minecraft-server:multiarch</li>
+<li>mariadb:latest</li>
+<li>redis:4.0</li>
+</ul>
+<p>皮肤站使用了php的相关依赖，在Docker Hub上翻了翻，并没有现成的镜像可以使用，于是根据已有的nginx-php-fpm镜像<code>edofede/nginx-php-fpm:latest</code>自己构建了一个，Dockerfile如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Dockerfile" data-lang="Dockerfile"><span class="k">FROM</span><span class="s"> edofede/nginx-php-fpm:latest</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="k">RUN</span> sed -i <span class="s2">&#34;s@http://dl-cdn.alpinelinux.org/@https://repo.huaweicloud.com/@g&#34;</span> /etc/apk/repositories <span class="se">\
+</span><span class="se"></span>  <span class="o">&amp;&amp;</span> apk update <span class="se">\
+</span><span class="se"></span>  <span class="o">&amp;&amp;</span> apk --no-cache add <span class="se">\
+</span><span class="se"></span>    php7-pdo <span class="se">\
+</span><span class="se"></span>    php7-openssl <span class="se">\
+</span><span class="se"></span>    php7-mbstring <span class="se">\
+</span><span class="se"></span>    php7-tokenizer <span class="se">\
+</span><span class="se"></span>    php7-gd <span class="se">\
+</span><span class="se"></span>    php7-ctype <span class="se">\
+</span><span class="se"></span>    php7-fileinfo <span class="se">\
+</span><span class="se"></span>    php7-zip <span class="se">\
+</span><span class="se"></span>    php7-session <span class="se">\
+</span><span class="se"></span>    php7-pdo_mysql <span class="se">\
+</span><span class="se"></span>    php7-iconv<span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 80</span><span class="err">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>保存好Dockerfile之后在同一目录构建镜像<code>koi/nginx-php-fpm:latest</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">docker build -t koi/nginx-php-fpm .
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="数据和配置">数据和配置</h3>
+<p>数据目录结构如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ tree -L <span class="m">1</span>  
+.
+├── blessing-skin-server
+├── data
+├── docker-compose.yml
+├── mysql
+└── nginx
+</code></pre></td></tr></table>
+</div>
+</div><p><code>blessing-skin-server</code>：从项目<a href="https://github.com/bs-community/blessing-skin-server/releases">Release页面</a>下载所需版本发布包，并解压到此目录。需要说明的是，Yggdrasil API插件可以不用先安装，可以等配置好服务启动之后在皮肤站的插件市场中在线安装。</p>
+<p>皮肤站默认配置文件为<code>.env</code>，可以复制一份模板文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cp .env.example .env
+</code></pre></td></tr></table>
+</div>
+</div><p>配置mysql的用户、密码、数据库等相关数据。</p>
+<p><code>data</code>：Minecraft Server运行时挂载，存储相关配置。需要提前下载好<a href="https://authlib-injector.yushi.moe/artifact/26/authlib-injector-1.1.26-41a7a47.jar">authlib-injector-1.1.26-41a7a47.jar</a>和<a href="https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar">minecraft_server.1.15.2.jar</a>到data目录，注意需要对应两个jar包在下文中<code>docker-compose.yml</code>中的名称。</p>
+<p><code>mysql</code>：存储皮肤站的用户数据库。</p>
+<p><code>nginx</code>：存储皮肤站的nginx配置，配置文件名为<code>default</code>，不可修改文件名称（nginx容器通过软链使用此配置）。详细配置内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">server</span> <span class="p">{</span>
+        <span class="kn">listen</span> <span class="mi">80</span> <span class="s">default_server</span><span class="p">;</span>
+        <span class="kn">listen</span> <span class="s">[::]:80</span> <span class="s">default_server</span><span class="p">;</span>
+
+        <span class="kn">root</span> <span class="s">/var/www/public</span><span class="p">;</span>
+        <span class="kn">index</span> <span class="s">index.html</span> <span class="s">index.htm</span> <span class="s">index.php</span><span class="p">;</span>
+
+        <span class="kn">server_name</span> <span class="s">_</span><span class="p">;</span>
+
+        <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+                <span class="kn">try_files</span> <span class="nv">$uri</span> <span class="nv">$uri/</span> <span class="s">/index.php?</span><span class="nv">$query_string</span><span class="p">;</span>
+                <span class="kn">autoindex</span> <span class="no">on</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="kn">location</span> <span class="p">~</span> <span class="sr">\.php$</span> <span class="p">{</span>
+                <span class="kn">fastcgi_split_path_info</span> <span class="s">^(.+?\.php)(/.*)</span>$<span class="p">;</span>
+                <span class="kn">if</span> <span class="s">(!-f</span> <span class="nv">$document_root$fastcgi_script_name</span><span class="s">)</span> <span class="p">{</span>
+                        <span class="kn">return</span> <span class="mi">404</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="kn">fastcgi_pass</span> <span class="s">unix:/run/php/php7.0-fpm.sock</span><span class="p">;</span>
+                <span class="kn">fastcgi_param</span> <span class="s">PATH_TRANSLATED</span> <span class="nv">$document_root$fastcgi_script_name</span><span class="p">;</span>
+                <span class="kn">include</span> <span class="s">fastcgi_params</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="kn">location</span> <span class="p">~</span> <span class="sr">/\.ht</span> <span class="p">{</span>
+                <span class="kn">deny</span> <span class="s">all</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="kn">location</span> <span class="p">=</span> <span class="s">/404.html</span> <span class="p">{</span>
+                <span class="kn">internal</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这里没有使用域名，也没有启用HTTPS，有需要的话可以自己修改。</p>
+<h3 id="docker-composeyml">docker-compose.yml</h3>
+<p>直接上yaml配置文件，一目了然。</p>
+<p>Minecraft service的JVM_XX_OPTS环境变量中有个<code>host:port</code>，<code>host</code>修改成你自己的服务器地址就好，<code>port</code>对应skin-website service中的<code>port</code>，另外修改mysql的用户密码为你配置在<code>.env</code>中的用户和密码。</p>
+<blockquote>
+<p>注意修改服务器的安全策略，放通皮肤站(<code>port</code>端口)和Minecraft Server(25565端口)的访问。</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">services</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">db</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">image</span><span class="p">:</span><span class="w"> </span>mariadb<span class="w">
+</span><span class="w">    </span><span class="k">restart</span><span class="p">:</span><span class="w"> </span>always<span class="w">
+</span><span class="w">    </span><span class="k">volumes</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- ./mysql<span class="p">:</span>/var/lib/mysql<span class="w">
+</span><span class="w">    </span><span class="k">environment</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="k">MYSQL_ROOT_PASSWORD</span><span class="p">:</span><span class="w"> </span>xxx<span class="w">
+</span><span class="w">      </span><span class="k">MYSQL_DATABASE</span><span class="p">:</span><span class="w"> </span>blessingskin<span class="w">
+</span><span class="w">      </span><span class="k">MYSQL_USER</span><span class="p">:</span><span class="w"> </span>koi<span class="w">
+</span><span class="w">      </span><span class="k">MYSQL_PASSWORD</span><span class="p">:</span><span class="w"> </span>xxx<span class="w">
+</span><span class="w">  </span><span class="k">redis</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">image</span><span class="p">:</span><span class="w"> </span>redis<span class="p">:</span><span class="m">4.0</span><span class="w">
+</span><span class="w">    </span><span class="k">restart</span><span class="p">:</span><span class="w"> </span>always<span class="w">
+</span><span class="w">  </span><span class="k">skin-website</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">image</span><span class="p">:</span><span class="w"> </span>koi/nginx-php-fpm<span class="p">:</span>latest<span class="w">
+</span><span class="w">    </span><span class="k">ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="s2">&#34;port:80&#34;</span><span class="w">
+</span><span class="w">    </span><span class="k">volumes</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- ./nginx<span class="p">:</span>/etc/nginx/sites-available<span class="w">
+</span><span class="w">      </span>- ./blessing-skin-server<span class="p">:</span>/var/www<span class="w">
+</span><span class="w">    </span><span class="k">restart</span><span class="p">:</span><span class="w"> </span>always<span class="w">
+</span><span class="w">    </span><span class="k">links</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- db<span class="w">
+</span><span class="w">      </span>- redis<span class="w">
+</span><span class="w">    </span><span class="k">depends_on</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- db<span class="w">
+</span><span class="w">      </span>- redis<span class="w">
+</span><span class="w">  </span><span class="k">minecraft</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">image</span><span class="p">:</span><span class="w"> </span>itzg/minecraft-server<span class="p">:</span>multiarch<span class="w">
+</span><span class="w">    </span><span class="k">ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="s2">&#34;25565:25565&#34;</span><span class="w">
+</span><span class="w">    </span><span class="k">volumes</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- ./data<span class="p">:</span>/data<span class="w">
+</span><span class="w">    </span><span class="k">environment</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="k">EULA</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;TRUE&#34;</span><span class="w">
+</span><span class="w">      </span><span class="k">VERSION</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;1.15.2&#34;</span><span class="w">
+</span><span class="w">      </span><span class="k">TYPE</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;CUSTOM&#34;</span><span class="w">
+</span><span class="w">      </span><span class="k">CUSTOM_SERVER</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/data/minecraft_server.1.15.2.jar&#34;</span><span class="w">
+</span><span class="w">      </span><span class="k">JVM_XX_OPTS</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;-javaagent:/data/authlib-injector-1.1.26-41a7a47.jar=http://host:port/api/yggdrasil&#34;</span><span class="w">
+</span><span class="w">    </span><span class="k">restart</span><span class="p">:</span><span class="w"> </span>always<span class="w">
+</span><span class="w">    </span><span class="k">links</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- skin-website<span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="运行">运行</h2>
+<p>根据Blessing Skin的<a href="https://blessing.netlify.com/setup.html">安装指南</a>，首次运行时需要生成<code>app key</code>，在<code>docker-compose.yml</code>文件所在目录执行以下命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker run -it --rm -v ./blessing-skin-server:/blessing-skin-server koi/nginx-php-fpm:latest cd /blessing-skin-server &amp;&amp; php artisan key:generate
+</code></pre></td></tr></table>
+</div>
+</div><p>即可生成<code>app key</code>.</p>
+<p>进入到<code>docker-compose.yml</code>文件所在目录，执行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker-compose up -d
+</code></pre></td></tr></table>
+</div>
+</div><p>此时没有问题的话，就能进入皮肤站主页（即<code>host:port</code>），确认相关配置并注册用户和你的Minecraft角色了。</p>
+<h2 id="play">Play</h2>
+<p>使用支持authlib-injector登录的客户端，比如<a href="https://hmcl.huangyuhui.net/">HMCL</a>，添加对应的api地址，如下图所示：
+<figure>
+    <img src="/img/2020-03-15_03-33.png"/> <figcaption>
+            <h4>添加认证服务器</h4>
+        </figcaption>
+</figure>
+
+进入游戏后，就可以添加你的Server，进入属于“你的世界”，快去通知朋友们一起玩耍吧！</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Koi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-03-15 00:11
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/docker/">Docker</a>
+          <a href="/tags/%E5%8D%8E%E4%B8%BA%E4%BA%91/">华为云</a>
+          <a href="/tags/arm64/">arm64</a>
+          <a href="/tags/aarch64/">aarch64</a>
+          <a href="/tags/minecraft/">minecraft</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/clash-with-auto-update-config/">
+            <span class="next-text nav-default">Clash自动更新订阅配置</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2020-03-15 00:11:45 \x2b0800 CST',
+        title: 'Docker搭建Minecraft AArch64 Server指北',
+        link: decodeURI(location.href),
+        desc: '\x3cblockquote\x3e\n\x3cp\x3e最近用上了华为云的ECS，基于aarch64（arm64）架构，而Minecraft使用Java编写，Java在各个平台都有虚拟机，通过Docker直接运行一个Minecraft server很简单。本文所实现的则是通过docker compose将Minecraft和Blessing Skin（附带yggdrasil-api插件）的相关容器编排到一起进行运行和管理。\x3c\/p\x3e\n\x3c\/blockquote\x3e\n\x3ch2 id=\x22介绍\x22\x3e介绍\x3c\/h2\x3e\n\x3cp\x3e开始之前，先分别介绍本文所涉及的几个名词。\x3c\/p\x3e\n\x3cp\x3e\x3ccode\x3eMinecraft\x3c\/code\x3e：《我的世界》（英语：Minecraft，港台译作“当个创世神”）是一款沙盒游戏，最初由瑞典游戏设计师马库斯·阿列克谢·泊松（别名Notch）单独开发，随后由2009年成立的瑞典公司Mojang开发并发行。玩家可以在一个随机生成的3D世界内，以带材质贴图的立方体为基础进行游戏。游戏中的其他特色包括探索世界、采集资源、合成物品及生存冒险等。游戏有多种模式，生存模式中玩家必须维持生命并采集资源来打造自己的世界；创造模式中玩家拥有无限的资源并可飞行，大多数玩家会使用此模式来建造大型建筑；冒险模式中玩家可在其他玩家定制的地图中游玩。游戏的Java版以其强大的第三方拓展模块（mod）而知名，它们可为游戏添加各种新的对象、角色和功能。(来源：\x3ca href=\x22https:\/\/zh.wikipedia.org\/wiki\/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C\x22\x3e维基百科\x3c\/a\x3e)\x3c\/p\x3e',
+        owner: 'akillcool',
+        repo: 'akillcool.github.io',
+        oauth: {
+          client_id: '43d5c3ff754607d378a9',
+          client_secret: 'b237b456c2285fad07bf92a5ef58e1f90acd2878'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:akillcool@live.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/akillcool" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/akillcool" class="iconfont icon-github" title="github"></a>
+  <a href="https://akillcool.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Koi</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-40133248-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -7,10 +7,64 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Koi</copyright>
-    <lastBuildDate>Fri, 14 Feb 2020 14:08:39 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2020 00:11:45 +0800</lastBuildDate>
     
 	<atom:link href="https://akillcool.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>aarch64</title>
+      <link>https://akillcool.github.io/tags/aarch64/</link>
+      <pubDate>Sun, 15 Mar 2020 00:11:45 +0800</pubDate>
+      
+      <guid>https://akillcool.github.io/tags/aarch64/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>arm64</title>
+      <link>https://akillcool.github.io/tags/arm64/</link>
+      <pubDate>Sun, 15 Mar 2020 00:11:45 +0800</pubDate>
+      
+      <guid>https://akillcool.github.io/tags/arm64/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://akillcool.github.io/tags/docker/</link>
+      <pubDate>Sun, 15 Mar 2020 00:11:45 +0800</pubDate>
+      
+      <guid>https://akillcool.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>minecraft</title>
+      <link>https://akillcool.github.io/tags/minecraft/</link>
+      <pubDate>Sun, 15 Mar 2020 00:11:45 +0800</pubDate>
+      
+      <guid>https://akillcool.github.io/tags/minecraft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>华为云</title>
+      <link>https://akillcool.github.io/tags/%E5%8D%8E%E4%B8%BA%E4%BA%91/</link>
+      <pubDate>Sun, 15 Mar 2020 00:11:45 +0800</pubDate>
+      
+      <guid>https://akillcool.github.io/tags/%E5%8D%8E%E4%B8%BA%E4%BA%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Arch</title>
+      <link>https://akillcool.github.io/tags/arch/</link>
+      <pubDate>Fri, 14 Feb 2020 14:08:39 +0800</pubDate>
+      
+      <guid>https://akillcool.github.io/tags/arch/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>archlinux</title>
@@ -99,15 +153,6 @@
       <pubDate>Thu, 05 Dec 2019 22:53:30 +0800</pubDate>
       
       <guid>https://akillcool.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Arch</title>
-      <link>https://akillcool.github.io/tags/arch/</link>
-      <pubDate>Wed, 04 Dec 2019 19:25:03 +0000</pubDate>
-      
-      <guid>https://akillcool.github.io/tags/arch/</guid>
       <description></description>
     </item>
     
