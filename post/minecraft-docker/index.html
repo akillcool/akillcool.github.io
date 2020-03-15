@@ -51,7 +51,7 @@ Minecraft：《我的世界》（英语：Minecraft，港台译作“当个创�
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://akillcool.github.io/post/minecraft-docker/" />
 <meta property="article:published_time" content="2020-03-15T00:11:45+08:00" />
-<meta property="article:modified_time" content="2020-03-15T00:11:45+08:00" />
+<meta property="article:modified_time" content="2020-03-15T11:48:45+08:00" />
 <meta itemprop="name" content="Docker搭建Minecraft AArch64 Server指北">
 <meta itemprop="description" content="
 最近用上了华为云的ECS，基于aarch64（arm64）架构，而Minecraft使用Java编写，Java在各个平台都有虚拟机，通过Docker直接运行一个Minecraft server很简单。本文所实现的则是通过docker compose将Minecraft和Blessing Skin（附带yggdrasil-api插件）的相关容器编排到一起进行运行和管理。
@@ -60,8 +60,8 @@ Minecraft：《我的世界》（英语：Minecraft，港台译作“当个创�
 开始之前，先分别介绍本文所涉及的几个名词。
 Minecraft：《我的世界》（英语：Minecraft，港台译作“当个创世神”）是一款沙盒游戏，最初由瑞典游戏设计师马库斯·阿列克谢·泊松（别名Notch）单独开发，随后由2009年成立的瑞典公司Mojang开发并发行。玩家可以在一个随机生成的3D世界内，以带材质贴图的立方体为基础进行游戏。游戏中的其他特色包括探索世界、采集资源、合成物品及生存冒险等。游戏有多种模式，生存模式中玩家必须维持生命并采集资源来打造自己的世界；创造模式中玩家拥有无限的资源并可飞行，大多数玩家会使用此模式来建造大型建筑；冒险模式中玩家可在其他玩家定制的地图中游玩。游戏的Java版以其强大的第三方拓展模块（mod）而知名，它们可为游戏添加各种新的对象、角色和功能。(来源：维基百科)">
 <meta itemprop="datePublished" content="2020-03-15T00:11:45&#43;08:00" />
-<meta itemprop="dateModified" content="2020-03-15T00:11:45&#43;08:00" />
-<meta itemprop="wordCount" content="2543">
+<meta itemprop="dateModified" content="2020-03-15T11:48:45&#43;08:00" />
+<meta itemprop="wordCount" content="2573">
 
 
 
@@ -147,7 +147,7 @@ Minecraft：《我的世界》（英语：Minecraft，港台译作“当个创�
             <a href="/categories/linux/"> linux </a>
             <a href="/categories/tech/"> tech </a>
             </div>
-          <span class="more-meta"> 约 2543 字 </span>
+          <span class="more-meta"> 约 2573 字 </span>
           <span class="more-meta"> 预计阅读 6 分钟 </span>
         
       </div>
@@ -455,7 +455,7 @@ Minecraft：《我的世界》（英语：Minecraft，港台译作“当个创�
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">docker-compose up -d
 </code></pre></td></tr></table>
 </div>
-</div><p>此时没有问题的话，就能进入皮肤站主页（即<code>host:port</code>），确认相关配置并注册用户和你的Minecraft角色了。</p>
+</div><p>此时没有问题的话，就能进入皮肤站主页（即<code>host:port</code>），确认相关配置并注册用户和你的Minecraft角色了，同时也不要忘了在插件市场中启用Yggdrasil API插件。</p>
 <h2 id="play">Play</h2>
 <p>使用支持authlib-injector登录的客户端，比如<a href="https://hmcl.huangyuhui.net/">HMCL</a>，添加对应的api地址，如下图所示：
 <figure>
@@ -475,7 +475,7 @@ Minecraft：《我的世界》（英语：Minecraft，港台译作“当个创�
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2020-03-15 00:11
+        2020-03-15 11:48
         
     </span>
   </p>
