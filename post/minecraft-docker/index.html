@@ -153,7 +153,25 @@ Minecraft：《我的世界》（英语：Minecraft，港台译作“当个创�
       </div>
     </header>
 
-    
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#介绍">介绍</a></li>
+    <li><a href="#编排">编排</a>
+      <ul>
+        <li><a href="#镜像">镜像</a></li>
+        <li><a href="#数据和配置">数据和配置</a></li>
+        <li><a href="#docker-composeyml">docker-compose.yml</a></li>
+      </ul>
+    </li>
+    <li><a href="#运行">运行</a></li>
+    <li><a href="#play">Play</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
     <div class="post-content">
       <blockquote>
 <p>最近用上了华为云的ECS，基于aarch64（arm64）架构，而Minecraft使用Java编写，Java在各个平台都有虚拟机，通过Docker直接运行一个Minecraft server很简单。本文所实现的则是通过docker compose将Minecraft和Blessing Skin（附带yggdrasil-api插件）的相关容器编排到一起进行运行和管理。</p>
